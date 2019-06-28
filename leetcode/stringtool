@@ -1,0 +1,51 @@
+#include "stringtool.h"
+#include <string>
+#include <algorithm>
+namespace ymh {
+void trimLeftTrailingSpaces(std::string &input) {
+    input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
+        return !isspace(ch);
+    }));
+}
+
+void trimRightTrailingSpaces(std::string &input) {
+    input.erase(find_if(input.rbegin(), input.rend(), [](int ch) {
+        return !isspace(ch);
+    }).base(), input.end());
+}
+
+template<>
+auto stringToValue(const std::string &str) -> int {
+    return stoi(str);
+}
+
+template<>
+auto stringToValue(const std::string &str) -> double {
+    return stod(str);
+}
+
+template<>
+auto stringToValue(const std::string &str) -> long {
+    return stol(str);
+}
+
+template<>
+auto stringToValue(const std::string &str) -> long double {
+    return stold(str);
+}
+
+template<>
+auto stringToValue(const std::string &str) -> long long {
+    return stoll(str);
+}
+
+template<>
+auto stringToValue(const std::string &str) -> unsigned long {
+    return stoul(str);
+}
+
+template<>
+auto stringToValue(const std::string &str) -> unsigned long long {
+    return stoull(str);
+}
+}

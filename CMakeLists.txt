@@ -3,4 +3,5 @@ project(oj)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(oj main.cpp leetcode/treenode.h leetcode/stringtool.h leetcode/stringtool.cpp leetcode/treenode.cpp)
+add_executable(tree demo/tree.cpp leetcode/treenode.h leetcode/stringtool.h leetcode/stringtool leetcode/treenode)
+add_executable(oj main.cpp leetcode/treenode.h leetcode/stringtool.h leetcode/stringtool leetcode/treenode)
