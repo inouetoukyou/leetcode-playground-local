@@ -3,12 +3,21 @@
 #include <cstdio>
 #include <sstream>
 #include <queue>
-TreeNode::TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+TreeNode::TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+
+/*
+ construct a Tree from string
+ [1,null,2, 3] --> 1
+                  / \
+                    2
+                   / \
+                   3
+*/
 TreeNode* TreeNode::stringToTreeNode(std::string input) {
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
     input = input.substr(1, input.length() - 2);
-    if (!input.size()) {
+    if (input.empty()) {
         return nullptr;
     }
 
@@ -17,7 +26,7 @@ TreeNode* TreeNode::stringToTreeNode(std::string input) {
     ss.str(input);
 
     getline(ss, item, ',');
-    TreeNode* root = new TreeNode(stoi(item));
+    auto root = new TreeNode(stoi(item));
     std::queue<TreeNode*> nodeQueue;
     nodeQueue.push(root);
 
