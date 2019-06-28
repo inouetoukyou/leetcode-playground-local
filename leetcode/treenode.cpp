@@ -7,6 +7,7 @@ TreeNode::TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
 /*
  construct a Tree from string
+ {1, #, 2, 3}
  [1,null,2, 3] --> 1
                   / \
                     2
@@ -39,7 +40,7 @@ TreeNode* TreeNode::stringToTreeNode(std::string input) {
         }
 
         trimLeftTrailingSpaces(item);
-        if (item != "null") {
+        if (item != "null" || item != "#") {
             int leftNumber = stoi(item);
             node->left = new TreeNode(leftNumber);
             nodeQueue.push(node->left);
