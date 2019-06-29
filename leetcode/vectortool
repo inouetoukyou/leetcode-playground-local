@@ -1,0 +1,67 @@
+//
+// Created by Minghang Yang on 2019-06-29.
+//
+#pragma once
+#include "vectortool.h"
+#include "stringtool"
+#include <vector>
+#include <string>
+#include <sstream>
+namespace ymh {
+template <class T>
+void GenericVectorGenerator<T>::getSingleVectorPreprocess(std::string &input, std::string &forStringstream) {
+    trimLeftTrailingSpaces(input);
+    trimRightTrailingSpaces(input);
+    forStringstream = input.substr(1, input.length() - 2);
+}
+
+template <class T>
+std::vector<T> GenericVectorGenerator<T>::getSingleVector(std::string &input, bool doPreprocess) {
+    std::stringstream ss;
+    std::vector<T> ans;
+    if (doPreprocess) {
+        std::string forStringstream;
+        getSingleVectorPreprocess(input, forStringstream);
+        if (forStringstream.empty()) {
+            return ans;
+        }
+        ss.str(forStringstream);
+    }
+    else {
+        ss.str(input);
+    }
+    std::string item;
+    while (true) {
+        if (!getline(ss, item, ',')) {
+            break;
+        }
+        ans.push_back(stringToValue<T>(item));
+    }
+    return ans;
+}
+
+template <class T>
+std::vector<std::vector<T>> GenericVectorGenerator<T>::getDoubleVector(std::string &input) {
+    std::vector<std::vector<T>> ans;
+    trimLeftTrailingSpaces(input);
+    trimRightTrailingSpaces(input);
+    char left_bracket = input[0];
+    char right_bracket = input[input.length() - 1];
+    std::string input1 = input.substr(1, input.length() - 2);
+    if (input1.empty()) {
+        return ans;
+    }
+    int first_left_pos = input1.find(left_bracket);
+    int first_right_pos = input1.find(right_bracket);
+    while (true) {
+        if (first_left_pos > first_right_pos || first_left_pos == std::string::npos || first_right_pos == std::string::npos) {
+            break;
+        }
+        std::string s = input1.substr(first_left_pos + 1, first_right_pos - first_left_pos - 1);
+        ans.push_back(getSingleVector(s, false));
+        first_left_pos = input1.find(left_bracket, first_right_pos + 1);
+        first_right_pos = input1.find(right_bracket, first_right_pos + 1);
+    }
+    return ans;
+}
+}

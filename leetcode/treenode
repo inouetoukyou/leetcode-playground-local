@@ -1,3 +1,4 @@
+#pragma once
 #include "treenode.h"
 #include "stringtool"
 #include <cstdio>
@@ -21,16 +22,16 @@ Note: make sure you use the right method to get input
  `getline(cin, input)` is better than `cin >> input`
 */
 template<class T>
-GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string input) {
+GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input) {
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
-    input = input.substr(1, input.length() - 2);
-    if (input.empty()) {
+    std::string input1 = input.substr(1, input.length() - 2);
+    if (input1.empty()) {
         return nullptr;
     }
 
     std::string item;
-    std::stringstream ss(input);
+    std::stringstream ss(input1);
 
     getline(ss, item, ',');
     auto root = new GenericTreeNode(stringToValue<T>(item));
@@ -40,7 +41,6 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string input) {
     while (true) {
         GenericTreeNode *node = nodeQueue.front();
         nodeQueue.pop();
-        item.clear();
         if (!getline(ss, item, ',')) {
             break;
         }
@@ -53,7 +53,6 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string input) {
             nodeQueue.push(node->left);
         }
 
-        item.clear();
         if (!getline(ss, item, ',')) {
             break;
         }

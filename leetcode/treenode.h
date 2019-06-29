@@ -12,7 +12,7 @@ struct GenericTreeNode {
 
     GenericTreeNode(T x);
 
-    static GenericTreeNode *stringToTreeNode(std::string input);
+    static GenericTreeNode *stringToTreeNode(std::string &input);
 
     static std::vector<T> preorderTraverse(GenericTreeNode *root);
 
