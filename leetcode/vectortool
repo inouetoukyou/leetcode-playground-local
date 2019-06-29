@@ -17,6 +17,12 @@ void GenericVectorGenerator<T>::getSingleVectorPreprocess(std::string &input, st
 
 template <class T>
 std::vector<T> GenericVectorGenerator<T>::getSingleVector(std::string &input, bool doPreprocess) {
+    /* when we want to get a vector<T> by given string,
+     * it often should do preprocess, so doPreprocess is
+     * set to `true` by default.
+     * when this function is called by getDoubleVector,
+     * the parameter `input` may have been preprocessed, so
+     * doPreprocess can be false*/
     std::stringstream ss;
     std::vector<T> ans;
     if (doPreprocess) {

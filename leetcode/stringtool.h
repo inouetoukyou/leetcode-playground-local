@@ -9,5 +9,7 @@ void trimRightTrailingSpaces(std::string &input);
 
 template<class T>
 auto stringToValue(const std::string &str) -> T;
+/* convert string to int/double/long/float/long long/... by given T
+ * */
 }
 #endif //OJ_STRINGTOOL_H

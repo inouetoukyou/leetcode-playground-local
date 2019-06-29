@@ -49,4 +49,9 @@ template<>
 auto stringToValue(const std::string &str) -> unsigned long long {
     return stoull(str);
 }
+
+template<>
+auto stringToValue(const std::string &str) -> float {
+    return stof(str);
+}
 }
