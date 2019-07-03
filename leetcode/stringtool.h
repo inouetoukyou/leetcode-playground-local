@@ -3,8 +3,17 @@
 
 #include <string>
 namespace ymh {
+/*
+ * trim if it is not digit*/
+void trimLeftTrailing(std::string &input);
+/*
+ * trim if it is not digit*/
+void trimRightTrailing(std::string &input);
+/*
+ * trim if it is space*/
 void trimLeftTrailingSpaces(std::string &input);
-
+/*
+ * trim if it is space*/
 void trimRightTrailingSpaces(std::string &input);
 
 template<class T>

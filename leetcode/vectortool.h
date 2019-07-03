@@ -12,9 +12,9 @@ struct GenericVectorGenerator {
 private:
     static void getSingleVectorPreprocess(std::string &input, std::string &forStringstream);
 public:
-    static std::vector<T> getSingleVector(std::string &input, bool doPreprocess = true);
+    static std::vector<T> getSingleVector(std::string &input, char delim = ',', bool doPreprocess = true);
 
-    static std::vector<std::vector<T>> getDoubleVector(std::string &input);
+    static std::vector<std::vector<T>> getDoubleVector(std::string &input, char delim = ',');
 };
 
 }

@@ -16,7 +16,7 @@ void GenericVectorGenerator<T>::getSingleVectorPreprocess(std::string &input, st
 }
 
 template <class T>
-std::vector<T> GenericVectorGenerator<T>::getSingleVector(std::string &input, bool doPreprocess) {
+std::vector<T> GenericVectorGenerator<T>::getSingleVector(std::string &input, char delim, bool doPreprocess) {
     /* when we want to get a vector<T> by given string,
      * it often should do preprocess, so doPreprocess is
      * set to `true` by default.
@@ -38,7 +38,7 @@ std::vector<T> GenericVectorGenerator<T>::getSingleVector(std::string &input, bo
     }
     std::string item;
     while (true) {
-        if (!getline(ss, item, ',')) {
+        if (!getline(ss, item, delim)) {
             break;
         }
         ans.push_back(stringToValue<T>(item));
@@ -47,7 +47,7 @@ std::vector<T> GenericVectorGenerator<T>::getSingleVector(std::string &input, bo
 }
 
 template <class T>
-std::vector<std::vector<T>> GenericVectorGenerator<T>::getDoubleVector(std::string &input) {
+std::vector<std::vector<T>> GenericVectorGenerator<T>::getDoubleVector(std::string &input, char delim) {
     std::vector<std::vector<T>> ans;
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
@@ -64,7 +64,7 @@ std::vector<std::vector<T>> GenericVectorGenerator<T>::getDoubleVector(std::stri
             break;
         }
         std::string s = input1.substr(first_left_pos + 1, first_right_pos - first_left_pos - 1);
-        ans.push_back(getSingleVector(s, false));
+        ans.push_back(getSingleVector(s, delim, false));
         first_left_pos = input1.find(left_bracket, first_right_pos + 1);
         first_right_pos = input1.find(right_bracket, first_right_pos + 1);
     }

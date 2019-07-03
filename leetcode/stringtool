@@ -3,6 +3,18 @@
 #include <string>
 #include <algorithm>
 namespace ymh {
+void trimLeftTrailing(std::string &input) {
+    input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
+        return isdigit(ch);
+    }));
+}
+
+void trimRightTrailing(std::string &input) {
+    input.erase(find_if(input.rbegin(), input.rend(), [](int ch) {
+        return isdigit(ch);
+    }).base(), input.end());
+}
+
 void trimLeftTrailingSpaces(std::string &input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
         return !isspace(ch);

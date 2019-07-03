@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(tree demo/tree.cpp leetcode/treenode.h leetcode/stringtool.h leetcode/stringtool leetcode/treenode)
 add_executable(doublevector demo/doublevector.cpp leetcode/stringtool.h leetcode/stringtool leetcode/vectortool.h leetcode/vectortool)
+add_executable(custom_vector demo/custom_vector.cpp leetcode/stringtool.h leetcode/stringtool leetcode/vectortool.h leetcode/vectortool)
