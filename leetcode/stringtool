@@ -66,4 +66,12 @@ template<>
 auto stringToValue(const std::string &str) -> float {
     return stof(str);
 }
+
+template<>
+auto stringToValue(const std::string &str) -> char {
+    std::string str2 = str;
+    trimLeftTrailingSpaces(str2);
+    trimRightTrailingSpaces(str2);
+    return str2[1];
+}
 }
