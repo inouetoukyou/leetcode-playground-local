@@ -11,12 +11,12 @@
 #include "leetcode/treenode"
 #include "leetcode/vectortool"
 template <class T = int>
-std::vector<T> getVector(std::string &input) {
-    return ymh::GenericVectorGenerator<T>::getSingleVector(input);
+std::vector<T> getVector(std::string &input, char delim = ',') {
+    return ymh::GenericVectorGenerator<T>::getSingleVector(input, delim);
 }
 template <class T = int>
-std::vector<std::vector<T>> getDVector(std::string &input) {
-    return ymh::GenericVectorGenerator<T>::getDoubleVector(input);
+std::vector<std::vector<T>> getDVector(std::string &input, char delim = ',') {
+    return ymh::GenericVectorGenerator<T>::getDoubleVector(input, delim);
 }
 template <class T>
 void output_vector2(std::vector<std::vector<T>> ans) {

@@ -41,6 +41,9 @@ std::vector<T> GenericVectorGenerator<T>::getSingleVector(std::string &input, ch
         if (!getline(ss, item, delim)) {
             break;
         }
+        if (delim == ' ' && item == "") {
+            continue;
+        }
         ans.push_back(stringToValue<T>(item));
     }
     return ans;
