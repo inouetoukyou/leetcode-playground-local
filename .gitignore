@@ -1,6 +1,5 @@
 .idea/
 cmake-build-debug/
 main.cpp
-helper.h
 CMakeLists.txt
 input.txt
