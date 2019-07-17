@@ -15,11 +15,20 @@ std::vector<T> getVector(std::string &input, char delim = ',') {
     return ymh::GenericVectorGenerator<T>::getSingleVector(input, delim);
 }
 template <class T = int>
-std::vector<std::vector<T>> getDVector(std::string &input, char delim = ',') {
+std::vector<std::vector<T>> getVector2(std::string &input, char delim = ',') {
     return ymh::GenericVectorGenerator<T>::getDoubleVector(input, delim);
 }
+
 template <class T>
-void output_vector2(std::vector<std::vector<T>> ans) {
+void outputVector(std::vector<T> &ans) {
+    for (T &a : ans) {
+        std::cout << a << " ";
+    }
+    std::cout << std::endl;
+}
+
+template <class T>
+void outputVector2(std::vector<std::vector<T>> ans) {
     for (std::vector<T> &an : ans) {
         for (T &a : an) {
             std::cout << a << " ";
@@ -27,11 +36,5 @@ void output_vector2(std::vector<std::vector<T>> ans) {
         std::cout << std::endl;
     }
 }
-template <class T>
-void output_vector(std::vector<T> &ans) {
-    for (T &a : ans) {
-        std::cout << a << " ";
-    }
-    std::cout << std::endl;
-}
+
 #endif //OJ_HELPER_H
