@@ -12,14 +12,14 @@ This is an input helper for LeetCode. When we solve the problems in LeetCode, we
 now you can see the demos.
 
 ## Menus
-###demo
-1) big_input.cpp
+### demo
+1) **big_input.cpp**  
 This test is for big input (see that in input/demo/big_input.in). It probably can not feed so large data to terminal by pasting, instead we can use  
 `cat ../../input/demo/big_input.in|./big_input`.  
 This test also includes `helper.h`, where the declared function `getVector` and `getVector2` are helpful for  converting `string` to `vector<T>` and `vector<vector<T>>`.
-2) char_doublevector.cpp
+2) **char_doublevector.cpp**  
 Test for converting `string` to `vector<vector<char>>`
-3) custom_vector.cpp
+3) **custom_vector.cpp**  
 Test for converting `string` to a custom class.  
 In this case, the class is  
     ```c++
@@ -32,9 +32,9 @@ In this case, the class is
         }
     };
     ```
-4) doublevector.cpp
+4) **doublevector.cpp**  
 Test for converting `string` to `vector<vector<int>>`
-5) tree.cpp
+5) **tree.cpp**  
 Test for converting `string` to `TreeNode`.
 In this case `TreeNode` = `GenericTreeNode<int>`
     ```c++
@@ -44,5 +44,6 @@ In this case `TreeNode` = `GenericTreeNode<int>`
         GenericTreeNode *left;
         GenericTreeNode *right;
         ...
+    }
     ```
 
