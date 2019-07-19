@@ -4,8 +4,8 @@
 /*
  * this file test big input
  * it is a solution for lintcode 1015. leetcode 802. Find Eventual Safe States
- * link {https://leetcode.com/problems/find-eventual-safe-states/}
- *      {https://www.lintcode.cn/problem/find-eventual-safe-states/}
+ * link https://leetcode.com/problems/find-eventual-safe-states/
+ *      https://www.lintcode.cn/problem/find-eventual-safe-states/
  * usage:
  * $ cat ../../input/demo/big_input.in|./big_input */
 
