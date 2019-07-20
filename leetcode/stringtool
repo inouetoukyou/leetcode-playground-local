@@ -74,4 +74,12 @@ auto stringToValue(const std::string &str) -> char {
     trimRightTrailingSpaces(str2);
     return str2[1];
 }
+
+template<>
+auto stringToValue(const std::string &str) -> std::string {
+    std::string str2 = str;
+    trimLeftTrailingSpaces(str2);
+    trimRightTrailingSpaces(str2);
+    return str2.substr(1, str2.size() - 2);
+}
 }
