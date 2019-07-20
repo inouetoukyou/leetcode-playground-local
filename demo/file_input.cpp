@@ -3,7 +3,7 @@
 //
 
 /*
- * this file file input
+ * this dome tests file input
  * it is a solution for lintcode 813. leetcode 1004. Largest Sum of Averages
  * link https://leetcode.com/problems/largest-sum-of-averages/
  *      https://www.lintcode.cn/problem/largest-sum-of-averages//
@@ -22,19 +22,19 @@ public:
             return 0.0;
         }
         vector<int> sum(n + 1);
-        vector<vector<double>> dp(K + 1, vector<double>(n + 1));
+        vector<double> dp(n + 1);
         for (int i = 0; i < n; ++i) {
             sum[i + 1] = sum[i] + A[i];
-            dp[1][i + 1] = sum[i + 1] * 1.0 / (i + 1);
+            dp[i + 1] = sum[i + 1] * 1.0 / (i + 1);
         }
         for (int i = 2; i <= K; ++i) {
-            for (int j = i; j <= n; ++j) {
+            for (int j = n; j >= i; --j) {
                 for (int k = i - 1; k < j; ++k) {
-                    dp[i][j] = std::max(dp[i][j], dp[i - 1][k] + (sum[j] - sum[k]) / (j - k));
+                    dp[j] = std::max(dp[j], dp[k] + (sum[j] - sum[k]) * 1.0 / (j - k));
                 }
             }
         }
-        return dp[K][n];
+        return dp[n];
     }
 };
 int main() {
