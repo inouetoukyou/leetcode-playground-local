@@ -9,7 +9,7 @@
  * usage:
  * $ cat ../../input/demo/big_input.in|./big_input */
 
-#include "../helper/vector_helper.h"
+#include "../helper.h"
 
 using namespace std;
 

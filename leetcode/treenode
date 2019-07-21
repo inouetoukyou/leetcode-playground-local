@@ -62,10 +62,15 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input, cha
             break;
         }
         if (delim == ' ' && item == "") {
+            bool end = true;
             while (!getline(ss, item, delim)) {
                 if (item != "") {
+                    end = false;
                     break;
                 }
+            }
+            if (end) {
+                break;
             }
         }
 

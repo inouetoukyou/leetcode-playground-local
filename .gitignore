@@ -3,6 +3,4 @@ cmake-build-debug/
 main.cpp
 CMakeLists.txt
 input.txt
-helper/file_helper.h
-helper/file_helper.cpp
 test.c

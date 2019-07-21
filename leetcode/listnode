@@ -73,7 +73,7 @@ GenericListNode<T> * GenericListNode<T>::stringToListNode(std::string &input, OJ
 }
 
 template <class T>
-std::vector<T> GenericListNode<T>::traverse(ymh::GenericListNode<T> *head) {
+std::vector<T> GenericListNode<T>::traverse(GenericListNode<T> *head) {
     std::vector<T> ans;
     GenericListNode *p = head;
     while (p) {

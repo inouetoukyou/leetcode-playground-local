@@ -9,7 +9,7 @@
  *      https://www.lintcode.cn/problem/largest-sum-of-averages//
  */
 
-#include "../helper/vector_helper.h"
+#include "../helper.h"
 
 #include <fstream>
 using namespace std;
