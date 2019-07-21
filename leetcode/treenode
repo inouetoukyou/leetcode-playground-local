@@ -22,7 +22,7 @@ Note: make sure you use the right method to get input
  `getline(cin, input)` is better than `cin >> input`
 */
 template<class T>
-GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input) {
+GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input, char delim) {
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
     std::string input1 = input.substr(1, input.length() - 2);
@@ -33,7 +33,10 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input) {
     std::string item;
     std::stringstream ss(input1);
 
-    getline(ss, item, ',');
+    getline(ss, item, delim);
+    if (delim == ' ' && item == "") {
+        return nullptr;
+    }
     auto root = new GenericTreeNode(stringToValue<T>(item));
     std::queue<GenericTreeNode *> nodeQueue;
     nodeQueue.push(root);
@@ -41,10 +44,12 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input) {
     while (true) {
         GenericTreeNode *node = nodeQueue.front();
         nodeQueue.pop();
-        if (!getline(ss, item, ',')) {
+        if (!getline(ss, item, delim)) {
             break;
         }
-
+        if (delim == ' ' && item == "") {
+            continue;
+        }
         trimLeftTrailingSpaces(item);
         trimRightTrailingSpaces(item);
         if (item != "null" && item != "#") {
@@ -53,8 +58,15 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input) {
             nodeQueue.push(node->left);
         }
 
-        if (!getline(ss, item, ',')) {
+        if (!getline(ss, item, delim)) {
             break;
+        }
+        if (delim == ' ' && item == "") {
+            while (!getline(ss, item, delim)) {
+                if (item != "") {
+                    break;
+                }
+            }
         }
 
         trimLeftTrailingSpaces(item);

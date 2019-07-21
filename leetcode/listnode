@@ -4,7 +4,82 @@
 #pragma once
 
 #include "listnode.h"
+#include "stringtool"
 namespace ymh{
 template <class T>
+const OJ_TYPE GenericListNode<T>::LEETCODE = 0;
+
+template <class T>
+const OJ_TYPE GenericListNode<T>::LINTCODE = 1;
+
+template <class T>
+GenericListNode<T>::GenericListNode() : next(nullptr){}
+
+template <class T>
 GenericListNode<T>::GenericListNode(T val) : val(val), next(nullptr){}
+
+template <class T>
+GenericListNode<T> * GenericListNode<T>::stringToListNode(std::string &input, OJ_TYPE type, char delim) {
+    trimLeftTrailingSpaces(input);
+    trimRightTrailingSpaces(input);
+    if (type == LEETCODE) {
+        std::string input1 = input.substr(1, input.length() - 2);
+        if (input1.empty()) {
+            return nullptr;
+        }
+        std::string item;
+        std::stringstream ss(input1);
+        GenericListNode dummy(0);
+        GenericListNode *tail = &dummy;
+        while (true) {
+            if (!getline(ss, item, delim)) {
+                break;
+            }
+            if (delim == ' ' && item == "") {
+                continue;
+            }
+            GenericListNode *node = new GenericListNode(stringToValue<T>(item));
+            tail->next = node;
+            tail = tail->next;
+        }
+        return dummy.next;
+    }
+    std::string input1 = input;
+    if (input1.empty()) {
+        return nullptr;
+    }
+    std::string item;
+    std::stringstream ss(input1);
+    GenericListNode dummy = GenericListNode();
+    GenericListNode *tail = &dummy;
+    while (true) {
+        if (!getline(ss, item, delim)) {
+            break;
+        }
+        if (delim == ' ' && item == "") {
+            continue;
+        }
+        if (item.find("null") != std::string::npos) {
+            break;
+        }
+        if (item[item.size() - 1] == '-') {
+            item = item.substr(0, item.size() - 1);
+        }
+        GenericListNode *node = new GenericListNode(stringToValue<T>(item));
+        tail->next = node;
+        tail = tail->next;
+    }
+    return dummy.next;
+}
+
+template <class T>
+std::vector<T> GenericListNode<T>::traverse(ymh::GenericListNode<T> *head) {
+    std::vector<T> ans;
+    GenericListNode *p = head;
+    while (p) {
+        ans.push_back(p->val);
+        p = p->next;
+    }
+    return ans;
+}
 }
