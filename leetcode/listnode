@@ -1,0 +1,10 @@
+//
+// Created by Minghang Yang on 2019-07-21.
+//
+#pragma once
+
+#include "listnode.h"
+namespace ymh{
+template <class T>
+GenericListNode<T>::GenericListNode(T val) : val(val), next(nullptr){}
+}
