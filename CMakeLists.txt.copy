@@ -4,6 +4,7 @@ project(oj)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_CXX_STANDARD 11)
 
+add_executable(test test.cpp)
 add_executable(tree demo/tree.cpp)
 add_executable(doublevector demo/doublevector.cpp)
 add_executable(custom_vector demo/custom_vector.cpp)
