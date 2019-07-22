@@ -14,4 +14,4 @@ In the top level directory, the `test.cpp` shows:
 `$ cmake ..`  
 `$ make`  
 `$ cd bin`  
-now you can see the [demos](demo/README.md).
+now you can see the [demos](demo/).
