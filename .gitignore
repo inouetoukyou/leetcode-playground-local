@@ -4,3 +4,5 @@ main.cpp
 CMakeLists.txt
 input.txt
 main.c
+oj.cpp
+kick_start.cpp
