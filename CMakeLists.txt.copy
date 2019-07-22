@@ -5,10 +5,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_CXX_STANDARD 11)
 
 add_executable(test test.cpp)
-add_executable(tree demo/tree.cpp)
+
+add_executable(test_treenode demo/test_treenode.cpp)
 add_executable(doublevector demo/doublevector.cpp)
 add_executable(custom_vector demo/custom_vector.cpp)
 add_executable(char_doublevector demo/char_doublevector.cpp)
 add_executable(big_input demo/big_input.cpp)
 add_executable(file_input demo/file_input.cpp)
 add_executable(string_vector demo/string_vector.cpp)
+add_executable(test_listnode demo/test_listnode.cpp)

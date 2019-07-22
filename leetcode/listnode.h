@@ -5,10 +5,9 @@
 #ifndef OJ_LISTNODE_H
 #define OJ_LISTNODE_H
 namespace ymh {
-    typedef int OJ_TYPE;
+typedef int OJ_TYPE;
 template <class T>
 struct GenericListNode {
-
     static const OJ_TYPE LEETCODE;
     static const OJ_TYPE LINTCODE;
     T val;

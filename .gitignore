@@ -3,4 +3,4 @@ cmake-build-debug/
 main.cpp
 CMakeLists.txt
 input.txt
-test.c
+main.c

@@ -4,7 +4,7 @@ using namespace std;
 using T = int;
 using ListNode = ymh::GenericListNode<T>;
 using TreeNode = ymh::GenericTreeNode<T>;
-string fileSource = "../../input.txt";
+string fileSource = "../../test_input.txt";
 
 class Solution {
 
@@ -19,7 +19,7 @@ int main() {
     outputVector(vList);
 
     // test TreeNode
-    cout << "traverse TreeNode:\n\t";
+    cout << "inorder traverse TreeNode:\n\t";
     string inputTree = "[1, null, 2  ,  4,7, 9]";
     TreeNode *root = getTree(inputTree);
     vector<int> vTree = inorderTraverseTree(root);
