@@ -13,13 +13,13 @@ template <class T>
 const OJ_TYPE GenericListNode<T>::LINTCODE = 1;
 
 template <class T>
-GenericListNode<T>::GenericListNode() : next(nullptr){}
+GenericListNode<T>::GenericListNode() : circle(false), next(nullptr){}
 
 template <class T>
-GenericListNode<T>::GenericListNode(T val) : val(val), next(nullptr){}
+GenericListNode<T>::GenericListNode(T val) : val(val), circle(false), next(nullptr){}
 
 template <class T>
-GenericListNode<T> * GenericListNode<T>::stringToListNode(std::string &input, OJ_TYPE type, char delim) {
+GenericListNode<T>* GenericListNode<T>::stringToListNode(std::string &input, OJ_TYPE type, char delim) {
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
     if (type == LEETCODE) {
@@ -62,7 +62,8 @@ GenericListNode<T> * GenericListNode<T>::stringToListNode(std::string &input, OJ
         if (item.find("null") != std::string::npos) {
             break;
         }
-        if (item[item.size() - 1] == '-') {
+        if (!isdigit(item[item.size() - 1])) {
+            // item[item.size() - 1] == '-'
             item = item.substr(0, item.size() - 1);
         }
         GenericListNode *node = new GenericListNode(stringToValue<T>(item));
@@ -81,5 +82,24 @@ std::vector<T> GenericListNode<T>::traverse(GenericListNode<T> *head) {
         p = p->next;
     }
     return ans;
+}
+template <class T>
+GenericListNode<T>* GenericListNode<T>::setCircle(GenericListNode<T> *head) {
+    if (head == nullptr || head->circle) {
+        return head;
+    }
+    GenericListNode* p = head;
+    while (p && p->next != nullptr) {
+        p->circle = true;
+        p = p->next;
+    }
+    p->next = head;
+    p->circle = true;
+    return head;
+}
+
+template <class T>
+bool GenericListNode<T>::isCircle() {
+    return this->circle;
 }
 }

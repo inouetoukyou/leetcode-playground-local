@@ -31,6 +31,11 @@ ymh::GenericListNode<T>* getList(std::string &input, ymh::OJ_TYPE type = ymh::Ge
 }
 
 template <class T>
+ymh::GenericListNode<T>* setCircle(ymh::GenericListNode<T> *head) {
+    return ymh::GenericListNode<T>::setCircle(head);
+}
+
+template <class T>
 std::vector<T> traverseList(ymh::GenericListNode<T> *head) {
     return ymh::GenericListNode<T>::traverse(head);
 }

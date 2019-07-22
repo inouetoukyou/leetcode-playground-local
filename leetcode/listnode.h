@@ -8,6 +8,9 @@ namespace ymh {
 typedef int OJ_TYPE;
 template <class T>
 struct GenericListNode {
+private:
+    bool circle;
+public:
     static const OJ_TYPE LEETCODE;
     static const OJ_TYPE LINTCODE;
     T val;
@@ -16,6 +19,8 @@ struct GenericListNode {
     GenericListNode(T val);
     static GenericListNode *stringToListNode(std::string &input, OJ_TYPE type = LEETCODE, char delim = ',');
     static std::vector<T> traverse(GenericListNode *head);
+    static GenericListNode *setCircle(GenericListNode *head);
+    bool isCircle();
 };
 }
 #endif //OJ_LISTNODE_H
