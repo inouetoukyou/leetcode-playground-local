@@ -1,0 +1,12 @@
+//
+// Created by Minghang Yang on 2019-07-23.
+//
+#pragma once
+#include "graphnode.h"
+namespace ymh {
+template <class T>
+GenericDirectedGraphNode<T>::GenericDirectedGraphNode(T label) : label(label) {}
+
+template <class T>
+GenericUndirectedGraphNode<T>::GenericUndirectedGraphNode(T label) : label(label) {}
+}

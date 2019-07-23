@@ -12,6 +12,7 @@
 #include "leetcode/vectortool"
 #include "leetcode/listnode"
 #include "leetcode/treenode"
+#include "leetcode/graphnode"
 
 std::ifstream getIfstream(std:: string source) {
     return std::ifstream(source);
