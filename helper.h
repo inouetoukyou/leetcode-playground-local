@@ -13,6 +13,7 @@
 #include "leetcode/listnode"
 #include "leetcode/treenode"
 #include "leetcode/graphnode"
+#include "leetcode/point.h"
 
 std::ifstream getIfstream(std:: string source) {
     return std::ifstream(source);
