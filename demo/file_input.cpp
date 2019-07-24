@@ -44,6 +44,13 @@ int main() {
     int K;
     in >> K;
     in.close();
+    /*
+     * hint:
+     * if you want to read an integer then read a string,
+     * in >> K            // read an integer
+     * getline(in, input) // cut the '\n'
+     * getline(in, input) // read a string*/
+    
     vector<int> A = getVector(input);
     outputVector(A);
     cout << Solution().largestSumOfAverages(A, K);
