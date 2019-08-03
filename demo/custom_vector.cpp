@@ -10,17 +10,30 @@
 using namespace std;
 using namespace ymh;
 
+#if __GNUC__ <= 6 && __GNUC__ >= 5
+namespace ymh {
+#endif
+
 class Interval {
 public:
     int start, end;
+
     Interval(int start, int end) {
         this->start = start;
         this->end = end;
     }
 };
+
 using T = Interval;
 template<>
+
+#if __GNUC__ <= 6 && __GNUC__ >= 5
+//T stringToValue(const std::string &str) {
+auto stringToValue(const std::string &str) -> Interval {
+#else
 auto ymh::stringToValue(const std::string &str) -> Interval {
+#endif
+
     string tmp = str;
     trimLeftTrailing(tmp);
     stringstream s(tmp);
@@ -30,6 +43,10 @@ auto ymh::stringToValue(const std::string &str) -> Interval {
     int end = stringToValue<int>(tmp);
     return Interval(start, end);
 }
+
+#if __GNUC__ <= 6 && __GNUC__ >= 5
+}
+#endif
 
 using VectorGenerator = GenericVectorGenerator<T>;
 void output(vector<T> intervals) {
