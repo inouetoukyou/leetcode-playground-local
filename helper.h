@@ -63,20 +63,17 @@ std::vector<int> inorderTraverseTree(ymh::GenericTreeNode<T> *root) {
 }
 
 template <class T>
-void outputVector(std::vector<T> &ans) {
+void outputVector(std::vector<T> &ans, char piv = ' ') {
     for (T &a : ans) {
-        std::cout << a << " ";
+        std::cout << a << piv;
     }
     std::cout << std::endl;
 }
 
 template <class T>
-void outputVector2(std::vector<std::vector<T>> ans) {
+void outputVector2(std::vector<std::vector<T>> ans, char piv = ' ') {
     for (std::vector<T> &an : ans) {
-        for (T &a : an) {
-            std::cout << a << " ";
-        }
-        std::cout << std::endl;
+        outputVector(an, piv);
     }
 }
 
