@@ -1,8 +1,10 @@
 .idea/
 cmake-build-debug/
+input/main.in
+input/oj.in
+input/kick_start.in
 main.cpp
 CMakeLists.txt
-input.txt
 main.c
 oj.cpp
 kick_start.cpp
