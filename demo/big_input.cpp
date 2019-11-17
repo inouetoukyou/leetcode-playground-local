@@ -14,7 +14,7 @@
 using namespace std;
 
 class Solution {
-    bool dfs(vector<vector<int>> &graph, vector<int> &status, vector<int> &ans, int pos) {
+    static bool dfs(vector<vector<int>> &graph, vector<int> &status, vector<int> &ans, int pos) {
         status[pos] = 1;
         int n = graph[pos].size();
         if (n == 0) {
@@ -39,7 +39,7 @@ public:
      * @param graph: a 2D integers array
      * @return: return a list of integers
      */
-    vector<int> eventualSafeNodes(vector<vector<int>> &graph) {
+    static vector<int> eventualSafeNodes(vector<vector<int>> &graph) {
         // write your code here
         int m = graph.size();
         if (m == 0) {
@@ -61,7 +61,7 @@ int main() {
     string input;
     cin >> input;
     vector<vector<int>> graph = getVector2(input);
-    vector<int> ans = Solution().eventualSafeNodes(graph);
+    vector<int> ans = Solution::eventualSafeNodes(graph);
     outputVector(ans);
     return 0;
 }

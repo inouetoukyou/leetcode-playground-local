@@ -16,7 +16,7 @@ using namespace std;
 
 class Solution {
 public:
-    double largestSumOfAverages(vector<int>& A, int K) {
+    static double largestSumOfAverages(vector<int>& A, int K) {
         int n = A.size();
         if (n == 0) {
             return 0.0;
@@ -53,6 +53,6 @@ int main() {
     
     vector<int> A = getVector(input);
     outputVector(A);
-    cout << Solution().largestSumOfAverages(A, K);
+    cout << Solution::largestSumOfAverages(A, K);
     return 0;
 }

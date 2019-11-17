@@ -3,7 +3,6 @@
 //
 #include <vector>
 #include <iostream>
-#include <sstream>
 #include "../leetcode/vectortool"
 
 using namespace std;

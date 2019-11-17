@@ -4,7 +4,6 @@
 
 #include <vector>
 #include <iostream>
-#include <sstream>
 #include "../leetcode/vectortool"
 
 using namespace std;
@@ -13,7 +12,7 @@ using T = char;
 using VectorGenerator = GenericVectorGenerator<T>;
 
 int main() {
-    string input = "[[\"1\",\"e\",   \"1\"],[\"q\",  \"0\",  \"x\"]]";
+    string input = R"([["1","e",   "1"],["q",  "0",  "x"]])";
     vector<vector<char>> ans = VectorGenerator::getDoubleVector(input);
     for (vector<char> &an : ans) {
         for (char &a : an) {

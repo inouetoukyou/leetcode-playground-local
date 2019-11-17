@@ -19,7 +19,7 @@ public:
      * @param board: the given board
      * @return: True if and only if it is possible to reach this board position during the course of a valid tic-tac-toe game
      */
-    bool validTicTacToe(vector<string> &board) {
+    static bool validTicTacToe(vector<string> &board) {
         // Write your code
         if (board.size() != 3) {
             return false;
@@ -83,10 +83,7 @@ public:
         if (winx_cnt > 0 && cntx == cnto) {
             return false;
         }
-        if (wino_cnt > 0 && cntx > cnto) {
-            return false;
-        }
-        return true;
+        return !(wino_cnt > 0 && cntx > cnto);
     }
 };
 
@@ -95,7 +92,7 @@ int main() {
     getline(cin, input);
     vector<string> board = getVector<string>(input);
     outputVector(board);
-    cout << Solution().validTicTacToe(board)<< endl;
+    cout << Solution::validTicTacToe(board)<< endl;
     /*
      * input:
      * [      "OXX",   "XOX",    "OXO"   ]
