@@ -14,15 +14,16 @@ G++-5可以运行，但是不建议使用。
 a. 如何将 `string` 解析成 `ListNode`, `TreeNode` 以及 `vector`  
 b. 如何从文件中读取输入  
 2. 子文件夹 `demos`    
-a. 如何把 `string` 解析为其他类型
+a. 如何把 `string` 解析为其他类型  
 `vector<vector<char>>` (`char_doublevector.cpp`)  
-`vector<Interval>` (`custom_vector.cpp`)  `vector<vector<int>>` (`doublevector.cpp`)  
+`vector<Interval>` (`custom_vector.cpp`)  
+`vector<vector<int>>` (`doublevector.cpp`)
 `vector<int>` (`int_vector.cpp`)  
 `vector<string>` (`stringvector.cpp`)  
 `ListNode<int>` (`test_listnode.cpp`)  
  `TreeNode<int>` (`test_treenode.cpp`)  
 b. 从命令行读取输入 (`big_input.cpp`)  
-c. 从文件读取输入 (`file_input.cpp`)
+c. 从文件读取输入 (`file_input.cpp` & `file_input2.cpp`)
 3. 子文件夹 `solutions` 里有LeetCode的部分答案。
 ## 使用说明 
 1. 命令行方式  

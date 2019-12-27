@@ -1,10 +1,9 @@
 #pragma once
 #include "treenode.h"
-#include "stringtool"
+#include "../tools/stringtool"
 #include <cstdio>
 #include <sstream>
 #include <queue>
-#include <vector>
 #include <stack>
 namespace ymh {
 template<class T>

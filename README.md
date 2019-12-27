@@ -16,11 +16,13 @@ b. how to handle input through a file
 2. In subdirectory `demos`, you can  
 a. see how to parse `string` to other types  
 `vector<vector<char>>` (`char_doublevector.cpp`)  
-`vector<Interval>` (`custom_vector.cpp`)  `vector<vector<int>>` (`doublevector.cpp`)  `vector<string>` (`stringvector.cpp`)  
+`vector<Interval>` (`custom_vector.cpp`)  
+`vector<vector<int>>` (`doublevector.cpp`)  
+`vector<string>` (`stringvector.cpp`)  
 `ListNode<int>` (`test_listnode.cpp`)  
 `TreeNode<int>` (`test_treenode.cpp`)  
 b. get input through command line (`big_input.cpp`)  
-c. get input from file (`file_input.cpp`)
+c. get input from file (`file_input.cpp` & `file_input2.cpp`)
 3. In subdirectory `solutions`, there are solutions to LeetCode problems.
 ## Usage 
 1. command line mode  

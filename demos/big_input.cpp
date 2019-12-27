@@ -7,9 +7,9 @@
  * link https://leetcode.com/problems/find-eventual-safe-states/
  *      https://www.lintcode.cn/problem/find-eventual-safe-states/
  * usage:
- * $ cat ../../input/demos/big_input.in|./big_input */
+ * $ cat ../../../input/demos/big_input.in|./big_input */
 
-#include "../helper.h"
+#include <helper.h>
 
 using namespace std;
 

@@ -1,9 +1,8 @@
 //
 // Created by Minghang Yang on 2019-06-29.
 //
-#include <vector>
 #include <iostream>
-#include "../leetcode/vectortool"
+#include "../tools/vectortool"
 
 using namespace std;
 using namespace ymh;

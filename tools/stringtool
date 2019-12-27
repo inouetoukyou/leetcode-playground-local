@@ -1,6 +1,5 @@
 #pragma once
 #include "stringtool.h"
-#include <string>
 #include <algorithm>
 namespace ymh {
 void trimLeftTrailing(std::string &input) {

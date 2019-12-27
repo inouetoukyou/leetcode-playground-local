@@ -1,5 +1,5 @@
 //
-// Created by Minghang Yang on 2019-07-19.
+// Created by Minghang Yang on 2019/12/27.
 //
 
 /*
@@ -13,7 +13,7 @@
 
 #include <fstream>
 using namespace std;
-
+#define LOCAL
 class Solution {
 public:
     static double largestSumOfAverages(vector<int>& A, int K) {
@@ -39,20 +39,25 @@ public:
 };
 int main() {
     string input;
-    ifstream in = ifstream("../../../input/demos/file_input.in");
-    getline(in, input);
+#ifdef LOCAL
+    FILE* fptr = freopen("../../../input/demos/file_input.in", "r", stdin);
+    assert(fptr);
+#endif
+    getline(cin, input);
     int K;
-    in >> K;
-    in.close();
+    cin >> K;
     /*
      * hint:
      * if you want to read an integer then read a string,
-     * in >> K            // read an integer
-     * getline(in, input) // cut the '\n'
-     * getline(in, input) // read a string*/
-    
+     * cin >> K            // read an integer
+     * getline(cin, input) // cut the '\n'
+     * getline(cin, input) // read a string*/
+
     vector<int> A = getVector(input);
     outputVector(A);
     cout << Solution::largestSumOfAverages(A, K) << endl;
+#ifdef LOCAL
+    fclose(fptr);
+#endif
     return 0;
 }

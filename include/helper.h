@@ -5,15 +5,13 @@
 #ifndef OJ_HELPER_H
 #define OJ_HELPER_H
 
-#include <vector>
-#include <string>
 #include <fstream>
 #include <iostream>
-#include "../leetcode/vectortool"
-#include "../leetcode/listnode"
-#include "../leetcode/treenode"
-#include "../leetcode/graphnode"
-#include "../leetcode/point.h"
+#include "../tools/vectortool"
+#include "../leetcode_structs/listnode"
+#include "../leetcode_structs/treenode"
+#include "../leetcode_structs/graphnode"
+#include "../leetcode_structs/point.h"
 
 std::ifstream getIfstream(std:: string source) {
     return std::ifstream(source);

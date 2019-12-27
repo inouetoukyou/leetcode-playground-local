@@ -2,7 +2,7 @@
 // Created by Minghang Yang on 2019-07-22.
 //
 
-#include "../helper.h"
+#include <helper.h>
 
 using namespace std;
 using T = int;

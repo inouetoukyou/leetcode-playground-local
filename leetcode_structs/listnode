@@ -4,7 +4,7 @@
 #pragma once
 
 #include "listnode.h"
-#include "stringtool"
+#include "../tools/stringtool"
 namespace ymh{
 template <class T>
 const OJ_TYPE GenericListNode<T>::LEETCODE = 0;

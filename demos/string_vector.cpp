@@ -9,7 +9,7 @@
  *      https://www.lintcode.com/problem/valid-tic-tac-toe-state/
  */
 
-#include "../helper.h"
+#include <helper.h>
 
 using namespace std;
 
