@@ -1,6 +1,7 @@
-# LeetCode Playground Local
+# LeetCode Playground Local  
+[中文版](README.ZH.md)
 ## Description
-This is an input helper for LeetCode. When we solve the problems in LeetCode, we can only see a Solution class, but this project can help we convert `string` to a specific data type, so we can debug our code in local IDE. Besides, it is generic, in other word, it can convert `string` to `vector<T>`, here `T` can be `int`, `double` and other basic types, it can even adapt to a custom class if we write a specific `stringToValue` function for this class. It also supports `TreeNode`.
+This is an input helper for LeetCode. When we solve the problems in LeetCode, we can only see a Solution class, which is inconvenient to debug. But this project can help we convert `string` to other data types that we want, such as `vector<T>`, `ListNode<T>` and `TreeNode<T>`.
 
 ## Compiler
 Clang with c++11 is recommended  
@@ -9,15 +10,31 @@ G++-5 is ok but not recommended
 G++-4.9 and below are not supported  
 
 ## Hint
-In the top level directory, the `test.cpp` shows:
-1) how to construct ListNode, TreeNode and vector
-2) how to handle input by using a file
-
+1. In the top level directory, the `test.cpp` shows:  
+a. how to parse `string` to `ListNode`, `TreeNode` and `vector`  
+b. how to handle input through a file  
+2. In subdirectory `demos`, you can  
+a. see how to parse `string` to other types  
+`vector<vector<char>>` (`char_doublevector.cpp`)  
+`vector<Interval>` (`custom_vector.cpp`)  `vector<vector<int>>` (`doublevector.cpp`)  `vector<string>` (`stringvector.cpp`)  
+`ListNode<int>` (`test_listnode.cpp`)  
+`TreeNode<int>` (`test_treenode.cpp`)  
+b. get input through command line (`big_input.cpp`)  
+c. get input from file (`file_input.cpp`)
+3. In subdirectory `solutions`, there are solutions to LeetCode problems.
 ## Usage 
-`$ mv CMakeLists.txt.copy CMakeLists.txt`  
+1. command line mode  
+`$ cp CMakeLists.txt.copy CMakeLists.txt`  
 `$ mkdir build`  
 `$ cd build`  
 `$ cmake ..`  
 `$ make`  
 `$ cd bin`  
-now you can see the [demos](demos/).
+`$ ls`  
+you can see all executable files.
+2. IDE mode (such as CLion)  
+a. Create `CMakeLists.txt` based on `CMakeLists.txt.copy`  
+b. Create `main.cpp` in top level directory.  
+c. In `CMakeLists.txt`, between line 8 `add_executable(test test.cpp)` and line 9 ` # end local files`, add commad `add_executable(main main.cpp)`.  
+d. Complete your solution followed the examples in `test.cpp` or files in dir `solutions` and `demos`.  
+e. Build your projects and debug.
