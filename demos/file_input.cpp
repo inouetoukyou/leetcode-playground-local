@@ -11,7 +11,6 @@
 
 #include <helper.h>
 
-#include <fstream>
 using namespace std;
 
 class Solution {
