@@ -10,7 +10,7 @@
  */
 
 #include <helper.h>
-
+#include <cassert>
 using namespace std;
 #define LOCAL
 class Solution {
