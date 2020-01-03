@@ -36,8 +36,8 @@ c. 从文件读取输入 (`file_input.cpp` & `file_input2.cpp`)
 `$ ls`  
 你将看到所有可执行文件.
 2. IDE 模式 (比如 CLion)  
-a. 基于 `CMakeLists.txt.copy` 创建 `CMakeLists.txt`  
+a. 复制 `CMakeLists.txt.copy` 并命名为 `CMakeLists.txt`  
 b. 在顶层目录创建 `main.cpp`.  
-c. 在 `CMakeLists.txt` 的第9行 `add_executable(test test.cpp)` 和第10行 ` # end local files` 之间添加 `add_executable(main main.cpp)`.  
-d. 仿照 `test.cpp` 或文件夹 `solutions` 和 `demos` 里的文件完成你的代码。  
+c. 在 `CMakeLists.txt` 的最后添加 `add_executable(main main.cpp)`.  
+d. 仿照 `test.cpp` 或文件夹 `solutions` 和 `demos` 里的文件完成 `main.cpp`。（如果要编译 `solutions` 里的代码，请把 `CMakeLists.txt` 里第15行的 `#` 去掉）  
 e. 编译和调试。

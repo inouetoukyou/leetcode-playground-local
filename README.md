@@ -35,8 +35,8 @@ c. get input from file (`file_input.cpp` & `file_input2.cpp`)
 `$ ls`  
 you can see all executable files.
 2. IDE mode (such as CLion)  
-a. Create `CMakeLists.txt` based on `CMakeLists.txt.copy`  
+a. Copy `CMakeLists.txt.copy` as `CMakeLists.txt`  
 b. Create `main.cpp` in top level directory.  
-c. In `CMakeLists.txt`, between line 9 `add_executable(test test.cpp)` and line 10 ` # end local files`, add code `add_executable(main main.cpp)`.  
-d. Complete your solution followed the examples in `test.cpp` or files in dir `solutions` and `demos`.  
+c. In `CMakeLists.txt`, add code `add_executable(main main.cpp)` after the last line.  
+d. Complete `main.cpp` followed the examples in `test.cpp` or files in dir `solutions` and `demos`.(If you want to compile the codes in `solutions`, remove the `#` at line 15 in `CMakeLists.txt`)  
 e. Build your projects and debug.

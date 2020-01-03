@@ -3,12 +3,6 @@ project(oj)
 set(CMAKE_CXX_STANDARD 11)
 include_directories(include)
 
-# local files
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
-add_executable(test test.cpp)
-# end local file
-
 function(build_all_cpp)
     FILE(GLOB_RECURSE SRC_FILES "*.cpp")
     FOREACH(FILE_PATH ${SRC_FILES})
@@ -18,4 +12,7 @@ function(build_all_cpp)
 endfunction()
 
 add_subdirectory(demos)
-add_subdirectory(solutions)
+#add_subdirectory(solutions)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+add_executable(test test.cpp)
