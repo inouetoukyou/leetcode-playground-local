@@ -19,6 +19,7 @@ public:
     GenericListNode(T val);
     static GenericListNode *stringToListNode(std::string &input, OJ_TYPE type = LEETCODE, char delim = ',');
     static std::vector<T> traverse(GenericListNode *head);
+    static void deleteList(GenericListNode *head);
     static GenericListNode *setCircle(GenericListNode *head);
     bool isCircle();
 };

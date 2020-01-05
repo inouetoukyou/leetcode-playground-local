@@ -14,11 +14,18 @@ public:
         return ans;
     }
 };
-int main(){
+int sub(){
     Solution solution;
-    string s = "[[1,1],[3,4],[-1,0]]";
-    vector<vector<int>> points = getVector2(s);
-    int ans = solution.minTimeToVisitAllPoints(points);
-    cout << ans << endl;
+    string s;
+    while (getline(cin, s)) {
+        vector<vector<int>> points = getVector2(s);
+        int ans = solution.minTimeToVisitAllPoints(points);
+        cout << ans << endl;
+    }
+
     return 0;
+}
+
+int main(int argc, char *argv[]) {
+    return subRoutine(argc, argv, sub);
 }

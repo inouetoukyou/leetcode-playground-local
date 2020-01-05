@@ -84,6 +84,15 @@ std::vector<T> GenericListNode<T>::traverse(GenericListNode<T> *head) {
     return ans;
 }
 template <class T>
+void GenericListNode<T>::deleteList(GenericListNode<T> *head) {
+    while (head != nullptr) {
+        GenericListNode *next = head->next;
+        delete(head);
+        head = next;
+    }
+}
+
+template <class T>
 GenericListNode<T>* GenericListNode<T>::setCircle(GenericListNode<T> *head) {
     if (head == nullptr || head->circle) {
         return head;
