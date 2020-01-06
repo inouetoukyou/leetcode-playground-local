@@ -4,7 +4,7 @@ using namespace std;
 using T = int;
 using ListNode = ymh::GenericListNode<T>;
 using TreeNode = ymh::GenericTreeNode<T>;
-string fileSource = "../../input/test.in";
+string fileSource = "../../input/test1.in";
 
 class Solution {
 

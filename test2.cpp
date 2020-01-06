@@ -1,3 +1,7 @@
+//
+// Created by Minghang Yang on 2020/1/6.
+//
+
 #include <helper.h>
 #include <unordered_map>
 using namespace std;
@@ -38,5 +42,5 @@ int sub() {
     return 0;
 }
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub);
+    return subRoutine(argc, argv, sub, "/../../input/");
 }

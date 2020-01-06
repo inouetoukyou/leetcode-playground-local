@@ -7,6 +7,8 @@
 
 #include <fstream>
 #include <iostream>
+#include <libgen.h>
+#include <cstring>
 #include "../tools/vectortool"
 #include "../leetcode_structs/listnode"
 #include "../leetcode_structs/treenode"
@@ -75,20 +77,34 @@ void outputVector2(std::vector<std::vector<T>> ans, char piv = ' ') {
     }
 }
 
-int subRoutine(int argc, char *argv[], int(*sub)(), const std::string &relative = "/../../../input/solutions/") {
+int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative = "/../../../input/solutions/") {
 #ifdef LOCAL
     FILE *fre;
     if (argc == 1) {
-        std::string s = argv[0];
-        int len = s.size();
-        int basePos = len - 1;
-        while (basePos >= 0 && s[basePos] != '/') {
-            --basePos;
+        int lenArgv0 = strlen(argv[0]);
+        char path1[lenArgv0];
+        strcpy(path1, argv[0]);
+        char path2[lenArgv0];
+        strcpy(path2, argv[0]);
+
+        char *baseName = basename(path1);
+        char *dirName = dirname(path2);
+        int lenDirName = strlen(dirName);
+        int lenRelative = strlen(relative);
+        int lenBaseName = strlen(baseName);
+        if (lenBaseName > 4 && baseName[lenBaseName - 1] == 'e' &&
+        baseName[lenBaseName - 2] == 'x' && baseName[lenBaseName - 3] == 'e' &&
+        baseName[lenBaseName - 4] == '.') {
+            baseName[lenBaseName - 4] = '\0';
+            lenBaseName -= 4;
         }
-        std::string dirname = s.substr(0, ++basePos);
-        std::string basename = s.substr(basePos);
-        std::string filePos = dirname + relative + basename + ".in";
-        fre = freopen(filePos.c_str(), "r", stdin);
+        int len = lenDirName + lenRelative + lenBaseName + 4;
+        char filePath[len];
+        strcpy(filePath, dirName);
+        strcat(filePath, relative);
+        strcat(filePath, baseName);
+        strcat(filePath, ".in");
+        fre = freopen(filePath, "r", stdin);
     } else {
         fre = freopen(argv[1], "r", stdin);
     }
