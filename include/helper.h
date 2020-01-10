@@ -71,10 +71,20 @@ void outputVector(std::vector<T> &ans, char piv = ' ') {
 }
 
 template <class T>
-void outputVector2(std::vector<std::vector<T>> ans, char piv = ' ') {
+void outputVector(std::vector<T> &&ans, char piv = ' ') {
+    outputVector(ans, piv);
+}
+
+template <class T>
+void outputVector2(std::vector<std::vector<T>> &ans, char piv = ' ') {
     for (std::vector<T> &an : ans) {
         outputVector(an, piv);
     }
+}
+
+template <class T>
+void outputVector2(std::vector<std::vector<T>> &&ans, char piv = ' ') {
+    outputVector2(ans, piv);
 }
 
 int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative = "/../../../input/solutions/") {
