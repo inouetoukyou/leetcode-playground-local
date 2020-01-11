@@ -32,6 +32,11 @@ ymh::GenericListNode<T>* getList(std::string &input, ymh::OJ_TYPE type = ymh::Ge
     return ymh::GenericListNode<T>::stringToListNode(input, type, delim);
 }
 
+template <class T = int>
+ymh::GenericListNode<T>* getListLintCode(std::string &input) {
+    return getList(input, ymh::GenericListNode<T>::LINTCODE, '>');
+}
+
 template <class T>
 ymh::GenericListNode<T>* setCircle(ymh::GenericListNode<T> *head) {
     return ymh::GenericListNode<T>::setCircle(head);

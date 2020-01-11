@@ -12,11 +12,19 @@ const OJ_TYPE GenericListNode<T>::LEETCODE = 0;
 template <class T>
 const OJ_TYPE GenericListNode<T>::LINTCODE = 1;
 
+#ifdef OJ_LISTNODE_CIRCLE
 template <class T>
 GenericListNode<T>::GenericListNode() : circle(false), next(nullptr){}
 
 template <class T>
 GenericListNode<T>::GenericListNode(T val) : val(val), circle(false), next(nullptr){}
+#else
+template <class T>
+GenericListNode<T>::GenericListNode() : next(nullptr){}
+
+template <class T>
+GenericListNode<T>::GenericListNode(T val) : val(val), next(nullptr){}
+#endif
 
 template <class T>
 GenericListNode<T>* GenericListNode<T>::stringToListNode(std::string &input, OJ_TYPE type, char delim) {
@@ -92,6 +100,7 @@ void GenericListNode<T>::deleteList(GenericListNode<T> *head) {
     }
 }
 
+#ifdef OJ_LISTNODE_CIRCLE
 template <class T>
 GenericListNode<T>* GenericListNode<T>::setCircle(GenericListNode<T> *head) {
     if (head == nullptr || head->circle) {
@@ -111,4 +120,5 @@ template <class T>
 bool GenericListNode<T>::isCircle() {
     return this->circle;
 }
+#endif
 }
