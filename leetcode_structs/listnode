@@ -84,6 +84,19 @@ GenericListNode<T>* GenericListNode<T>::stringToListNode(std::string &input, OJ_
 template <class T>
 std::vector<T> GenericListNode<T>::traverse(GenericListNode<T> *head) {
     std::vector<T> ans;
+    if (head == nullptr) {
+        return ans;
+    }
+#ifdef OJ_LISTNODE_CIRCLE
+    try {
+        if (head->isCircle()) {
+            throw "Exception: try to traverse a cyclic linked list";
+        }
+    } catch (const char *msg) {
+        std::cerr << msg << std::endl;
+        return ans;
+    }
+#endif
     GenericListNode *p = head;
     while (p) {
         ans.push_back(p->val);
@@ -91,13 +104,40 @@ std::vector<T> GenericListNode<T>::traverse(GenericListNode<T> *head) {
     }
     return ans;
 }
+
+#ifdef OJ_LISTNODE_CIRCLE
+template <class T>
+std::vector<T> GenericListNode<T>::traverseCyclic(GenericListNode<T> *head) {
+    std::vector<T> ans;
+    if (head == nullptr) {
+        return ans;
+    }
+    GenericListNode *p = head;
+    do {
+        ans.push_back(p->val);
+        p = p->next;
+    } while (p != head);
+    return ans;
+}
+#endif
+
 template <class T>
 void GenericListNode<T>::deleteList(GenericListNode<T> *head) {
+#ifdef OJ_LISTNODE_CIRCLE
+    GenericListNode *cur = head->next;
+    while (cur != head) {
+        GenericListNode *next = cur->next;
+        delete(cur);
+        cur = next;
+    }
+    delete(cur);
+#else
     while (head != nullptr) {
         GenericListNode *next = head->next;
         delete(head);
         head = next;
     }
+#endif
 }
 
 #ifdef OJ_LISTNODE_CIRCLE
@@ -107,7 +147,7 @@ GenericListNode<T>* GenericListNode<T>::setCircle(GenericListNode<T> *head) {
         return head;
     }
     GenericListNode* p = head;
-    while (p && p->next != nullptr) {
+    while (p->next != nullptr) {
         p->circle = true;
         p = p->next;
     }
@@ -115,7 +155,9 @@ GenericListNode<T>* GenericListNode<T>::setCircle(GenericListNode<T> *head) {
     p->circle = true;
     return head;
 }
+#endif
 
+#ifdef OJ_LISTNODE_CIRCLE
 template <class T>
 bool GenericListNode<T>::isCircle() {
     return this->circle;

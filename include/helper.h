@@ -75,10 +75,25 @@ std::vector<T> traverseList(ymh::GenericListNode<T> *head) {
     return ymh::GenericListNode<T>::traverse(head);
 }
 
+#ifdef OJ_LISTNODE_CIRCLE
+template <class T>
+std::vector<T> traverseCyclicList(ymh::GenericListNode<T> *head) {
+    return ymh::GenericListNode<T>::traverseCyclic(head);
+}
+#endif
+
 template <class T>
 void outputList(ymh::GenericListNode<T> *head) {
     outputVector(traverseList(head));
 }
+
+#ifdef OJ_LISTNODE_CIRCLE
+template <class T>
+void outputCyclicList(ymh::GenericListNode<T> *head) {
+    outputVector(traverseCyclicList(head));
+}
+#endif
+
 
 template <class T = int>
 ymh::GenericTreeNode<T> *getTree(std::string &input, char delim = ',') {
