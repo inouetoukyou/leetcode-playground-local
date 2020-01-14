@@ -137,9 +137,21 @@ int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative = "/../
             lenBaseName -= 4;
         }
         int len = lenDirName + lenRelative + lenBaseName + 4;
+        if (relative[0] != '/') {
+            ++len;
+        }
+        if (relative[lenRelative - 1] != '/') {
+            ++len;
+        }
         char filePath[len];
         strcpy(filePath, dirName);
+        if (relative[0] != '/') {
+            strcat(filePath, "/");
+        }
         strcat(filePath, relative);
+        if (relative[lenRelative - 1] != '/') {
+            strcat(filePath, "/");
+        }
         strcat(filePath, baseName);
         strcat(filePath, ".in");
         fre = freopen(filePath, "r", stdin);
