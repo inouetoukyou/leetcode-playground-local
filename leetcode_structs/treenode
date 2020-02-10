@@ -128,23 +128,43 @@ template<class T>
 std::vector<T> GenericTreeNode<T>::postorderTraverse(GenericTreeNode *root) {
     std::vector<T> ans;
     std::stack<GenericTreeNode*> stack;
-    GenericTreeNode *node = root, *last_visited = NULL;
-    while (node != NULL || !stack.empty()) {
-        while (node != NULL) {
+    GenericTreeNode *node = root, *last_visited = nullptr;
+    while (node != nullptr || !stack.empty()) {
+        while (node != nullptr) {
             stack.push(node);
             node = node->left;
         }
         node = stack.top();
-        if (node->right == NULL || node->right == last_visited) {
+        if (node->right == nullptr || node->right == last_visited) {
             stack.pop();
             ans.push_back(node->val);
             last_visited = node;
-            node = NULL;
+            node = nullptr;
         }
         else {
             node = node->right;
         }
     }
     return ans;
+}
+template<class T>
+void GenericTreeNode<T>::deleteTree(GenericTreeNode *root) {
+    // delete in preorder
+    if (root == nullptr) {
+        return;
+    }
+    std::stack<GenericTreeNode *> s;
+    s.push(root);
+    while (!s.empty()) {
+        GenericTreeNode *node = s.top();
+        s.pop();
+        if (node->right != nullptr) {
+            s.push(node->right);
+        }
+        if (node->left != nullptr) {
+            s.push(node->left);
+        }
+        delete node;
+    }
 }
 }

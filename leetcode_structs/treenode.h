@@ -19,6 +19,8 @@ struct GenericTreeNode {
     static std::vector<T> inorderTraverse(GenericTreeNode *root);
 
     static std::vector<T> postorderTraverse(GenericTreeNode *root);
+
+    static void deleteTree(GenericTreeNode *root);
 };
 }
 #endif //OJ_TREENODE_H

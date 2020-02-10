@@ -94,6 +94,10 @@ void outputCyclicList(ymh::GenericListNode<T> *head) {
 }
 #endif
 
+template <class T>
+void deleteList(ymh::GenericListNode<T> *head) {
+    ymh::GenericListNode<T>::deleteList(head);
+}
 
 template <class T = int>
 ymh::GenericTreeNode<T> *getTree(std::string &input, char delim = ',') {
@@ -113,6 +117,11 @@ std::vector<int> postorderTraverseTree(ymh::GenericTreeNode<T> *root) {
 template <class T>
 std::vector<int> inorderTraverseTree(ymh::GenericTreeNode<T> *root) {
     return ymh::GenericTreeNode<T>::inorderTraverse(root);
+}
+
+template <class T>
+void deleteTree(ymh::GenericTreeNode<T> *root) {
+    ymh::GenericTreeNode<T>::deleteTree(root);
 }
 
 int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative = "/../../../input/solutions/") {
