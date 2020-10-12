@@ -1,0 +1,10 @@
+Write your input files associated source files in mains here,
+for example, you write main1.cpp in mains, then you write a main1.in here.
+
+For its detail usage, see test2.cpp. It use a relative path "/../../input/"(hint, you can ignore the leading '/', but write
+relate path as this given format). Because the executable file of test2.cpp is in cmake-build-debug/bin/,
+so cmake-build-debug/bin/../../input is dir input, where you can find test2.in
+
+将你在mains中的源文件对应的输入文件写在这里。比如，mains中有main1.cpp的源文件，就在这里写一个main1.in。
+细节可以参考test2.cpp。它使用了一个相对路径"/../../input/"（提示，你可以忽略前导的'/'，但是写相对路径的时候，还是参照这种格式）。因为
+test2.cpp的可执行文件放在cmake-build-debug/bin，所以cmake-build-debug/bin/../../input就是文件夹input，在这里你可以找到test2.in。

@@ -4,7 +4,7 @@
 This is an input helper for LeetCode. When we solve the problems in LeetCode, we can only see a Solution class, which is inconvenient to debug. But this project can help we convert `string` to other data types that we want, such as `vector<T>`, `ListNode<T>` and `TreeNode<T>`.  
 
 ## Compiler
-Clang with c++11 is recommended  
+Clang with c++17 is recommended  
 G++-6 and above are recommended  
 G++-5 is ok but not recommended  
 G++-4.9 and below are not supported  
@@ -39,9 +39,11 @@ c. get input from file (`file_input.cpp` & `file_input2.cpp`)
 `$ cd bin`  
 `$ ls`  
 you can see all executable files.
+
 2. IDE mode (such as CLion)  
 a. Copy `CMakeLists.txt.copy` as `CMakeLists.txt`  
-b. Create `main.cpp` in top level directory.  
-c. In `CMakeLists.txt`, add code `add_executable(main main.cpp)` after the last line.  
-d. Complete `main.cpp` followed the examples in `test1.cpp` , `test2.cpp` or  files in dir `solutions` and `demos`.(If you want to compile the codes in `solutions`, remove the `#` at line 18 in `CMakeLists.txt`)  
+b. If you want to compile the codes in `solutions`, remove the `#` at line 18 in `CMakeLists.txt`  
+c. Complete `main.cpp` followed the examples in `test1.cpp` , `test2.cpp` or  files in dir `solutions` and `demos`.()  
+d. Write source files in directory mains and associated input files(optional) in input/mains.  
 e. Build your projects and debug.  
+f. Every time you add new source file, if you use CLion, you can click Tools->CMake->Reload CMake Project to refresh CMake configuration.

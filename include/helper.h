@@ -15,7 +15,7 @@
 #include "../leetcode_structs/graphnode"
 #include "../leetcode_structs/point.h"
 
-std::ifstream getIfstream(std:: string source) {
+std::ifstream getIfstream(const std:: string& source) {
     return std::ifstream(source);
 }
 
@@ -25,8 +25,18 @@ std::vector<T> getVector(std::string &input, char delim = ',') {
 }
 
 template <class T = int>
+std::vector<T> getVector(std::string &&input, char delim = ',') {
+    return getVector(input, delim);
+}
+
+template <class T = int>
 std::vector<std::vector<T>> getVector2(std::string &input, char delim = ',') {
     return ymh::GenericVectorGenerator<T>::getDoubleVector(input, delim);
+}
+
+template <class T = int>
+std::vector<std::vector<T>> getVector2(std::string &&input, char delim = ',') {
+    return getVector2(input, delim);
 }
 
 template <class T>

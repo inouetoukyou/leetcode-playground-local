@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
 project(oj)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+#https://support.leetcode.com/hc/en-us/articles/360011833974-What-are-the-environments-for-the-programming-languages-
+#clang10 c++17
+set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -fsanitize=address,undefined)
 include_directories(include)
 
 function(build_all_cpp is_local)
@@ -15,6 +18,7 @@ function(build_all_cpp is_local)
 endfunction()
 
 add_subdirectory(demos)
+add_subdirectory(mains)
 #add_subdirectory(solutions)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

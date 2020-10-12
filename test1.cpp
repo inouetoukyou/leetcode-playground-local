@@ -51,7 +51,7 @@ int main() {
 
     // test string vector
     cout << "test string vector:\n";
-    string input = "[\"/*Test program */\",\"int main()\",\"{ \",\"  // variable declaration \",\"int a, b, c;\",\"/* This is a test\",\"   multiline  \",\"   comment for \",\"   testing */\",\"a = b + c;\",\"}\"]";
+    string input = R"lit(["/*Test program */","int main()","{ ","  // variable declaration ","int a, b, c;","/* This is a test","   multiline  ","   comment for ","   testing */","a = b + c;","}"])lit";
     vector<string> source = getVector<string>(input);
     outputVector(source, '\n');
     return 0;
