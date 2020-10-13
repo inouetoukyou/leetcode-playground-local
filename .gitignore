@@ -4,7 +4,7 @@
 !/mains/CMakeLists.txt
 /input/mains/*
 !/input/mains/README
-/CMakeLists.txt
+/solutions/CMakeSwitch.txt
 *.out
 *.exe
 *.swp

@@ -41,9 +41,8 @@ c. get input from file (`file_input.cpp` & `file_input2.cpp`)
 you can see all executable files.
 
 2. IDE mode (such as CLion)  
-a. Copy `CMakeLists.txt.copy` as `CMakeLists.txt`  
-b. If you want to compile the codes in `solutions`, remove the `#` at line 18 in `CMakeLists.txt`  
-c. Complete `main.cpp` followed the examples in `test1.cpp` , `test2.cpp` or  files in dir `solutions` and `demos`.()  
-d. Write source files in directory mains and associated input files(optional) in input/mains.  
-e. Build your projects and debug.  
-f. Every time you add new source file, if you use CLion, you can click Tools->CMake->Reload CMake Project to refresh CMake configuration.
+a. If you want to compile the codes in `solutions`, create `CMakeLists.txt` in `solutions` .  
+b. Write source files in directory `mains` (such as `main.cpp` ) and optional associated input files in input/mains (such as `main.in` ).  
+c. Format of `main.cpp` can be referred to the examples in `test1.cpp` , `test2.cpp` or files in dir `solutions` and `demos`.  
+e. Build and debug.  
+e. Every time you add new source files, you can click Tools->CMake->Reload CMake Project to refresh CMake configuration if you use CLion.  
