@@ -38,7 +38,8 @@ c. 从文件读取输入 (`file_input.cpp` & `file_input2.cpp`)
 
 ## 使用说明 
 1. 命令行方式  
-`$ cp CMakeLists.txt.copy CMakeLists.txt`  
+如果要编译 `solutions` 里的代码，请在 `solutions` 里创建一个文件 `CMakeSwitch.txt`。  
+`$ touch solutions/CMakeSwitch.txt` (可选的)   
 `$ mkdir build`  
 `$ cd build`  
 `$ cmake ..`  

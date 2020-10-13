@@ -37,7 +37,8 @@ c. get input from file (`file_input.cpp` & `file_input2.cpp`)
 
 ## Usage 
 1. command line mode  
-`$ cp CMakeLists.txt.copy CMakeLists.txt`  
+If you want to compile the codes in `solutions`, create `CMakeSwitch.txt` in `solutions` .  
+`$ touch solutions/CMakeSwitch.txt` (optional)  
 `$ mkdir build`  
 `$ cd build`  
 `$ cmake ..`  
@@ -47,8 +48,8 @@ c. get input from file (`file_input.cpp` & `file_input2.cpp`)
 you can see all executable files.
 
 2. IDE mode (such as CLion)  
-a. If you want to compile the codes in `solutions`, create `CMakeLists.txt` in `solutions` .  
-b. Write source files in directory `mains` (such as `main.cpp` ) and optional associated input files in input/mains (such as `main.in` ).  
+a. If you want to compile the codes in `solutions`, create `CMakeSwitch.txt` in `solutions` .  
+b. Write source files in directory `mains` (such as `main.cpp` ) and optional associated input files in `input/mains` (such as `main.in` ).  
 c. Format of `main.cpp` can be referred to the examples in `test1.cpp` , `test2.cpp` or files in dir `solutions` and `demos`.  
 e. Build and debug.  
 e. Every time you add new source files, you can click Tools->CMake->Reload CMake Project to refresh CMake configuration if you use CLion.  
