@@ -9,6 +9,12 @@ G++-6 and above are recommended
 G++-5 is ok but not recommended  
 G++-4.9 and below are not supported  
 
+## Sanitizer
+Install llvm.  
+In OSX,  
+`brew install llvm`  
+`ln -s /usr/local/opt/llvm/bin/llvm-symbolizer /usr/local/bin`
+
 ## Hint
 1. `test1.cpp` in the top level directory  shows:  
 a. how to parse `string` to `ListNode`, `TreeNode` and `vector`  

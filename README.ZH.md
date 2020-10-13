@@ -9,6 +9,12 @@ G++建议使用6及以上的版本。
 G++-5可以运行，但是不建议使用。  
 不支持G++-4.9及以下的版本。  
 
+## Sanitizer
+安装 llvm.  
+在 OSX上,  
+`brew install llvm`   
+`ln -s /usr/local/opt/llvm/bin/llvm-symbolizer /usr/local/bin` 
+
 ## 提示
 1. 最上层目录的 `test1.cpp` 展示：  
 a. 如何将 `string` 解析成 `ListNode`, `TreeNode` 以及 `vector`  

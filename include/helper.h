@@ -139,9 +139,9 @@ int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative = "/../
     FILE *fre;
     if (argc == 1) {
         int lenArgv0 = strlen(argv[0]);
-        char path1[lenArgv0];
+        char path1[lenArgv0 + 1];
         strcpy(path1, argv[0]);
-        char path2[lenArgv0];
+        char path2[lenArgv0 + 1];
         strcpy(path2, argv[0]);
 
         char *baseName = basename(path1);
