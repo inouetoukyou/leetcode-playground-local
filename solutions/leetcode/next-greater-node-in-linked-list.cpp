@@ -3,13 +3,14 @@
 //
 
 #include <helper.h>
+#include "subroutine_relative.h"
 using namespace std;
 using T = int;
 using ListNode = ymh::GenericListNode<T>;
 class Solution {
     /* use a stack*/
 public:
-    vector<int> nextLargerNodes(ListNode* head) {
+    static vector<int> nextLargerNodes(ListNode* head) {
         if (head == nullptr) {
             return vector<int>();
         }
@@ -35,11 +36,10 @@ public:
 };
 
 int sub() {
-    Solution solution;
     string s;
     while (getline(cin, s)) {
         ListNode *head = getList(s);
-        vector<int> ans = solution.nextLargerNodes(head);
+        vector<int> ans = Solution::nextLargerNodes(head);
         outputVector(ans);
         ListNode::deleteList(head);
     }
@@ -47,5 +47,5 @@ int sub() {
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub);
+    return subRoutine(argc, argv, sub, subroutine_relative);
 }

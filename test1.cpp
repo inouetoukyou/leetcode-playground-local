@@ -4,13 +4,13 @@ using namespace std;
 using T = int;
 using ListNode = ymh::GenericListNode<T>;
 using TreeNode = ymh::GenericTreeNode<T>;
-string fileSource = "../../input/test1.in";
 
 class Solution {
 
 };
 
 int main() {
+    string fileSource = "../../input/test1.in";
     // test ListNode
     cout << "test ListNode:\n";
     cout << "traverse ListNode:\n\t";

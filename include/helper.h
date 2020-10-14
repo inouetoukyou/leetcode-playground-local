@@ -134,7 +134,7 @@ void deleteTree(ymh::GenericTreeNode<T> *root) {
     ymh::GenericTreeNode<T>::deleteTree(root);
 }
 
-int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative = "/../../../input/solutions/") {
+int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative) {
 #ifdef LOCAL
     FILE *fre;
     if (argc == 1) {

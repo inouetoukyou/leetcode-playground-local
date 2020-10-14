@@ -1,10 +1,11 @@
 #include <helper.h>
 #include <unordered_map>
+#include "subroutine_relative.h"
 using namespace std;
 
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    static vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> ans;
         int n = nums.size();
         if (n < 2) {
@@ -25,19 +26,18 @@ public:
     }
 };
 int sub() {
-    Solution solution;
     string s;
     while (getline(cin, s)) {
         vector<int> nums = getVector(s);
         int target;
         cin >> target;
         getline(cin, s); // eat '\n'
-        vector<int> ans = solution.twoSum(nums, target);
+        vector<int> ans = Solution::twoSum(nums, target);
         outputVector(ans);
     }
     return 0;
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub);
+    return subRoutine(argc, argv, sub, subroutine_relative);
 }

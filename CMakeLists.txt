@@ -19,7 +19,7 @@ endfunction()
 
 add_subdirectory(demos)
 add_subdirectory(mains)
-add_subdirectory(solutions)
+add_subdirectory(solutions/leetcode)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 add_executable(test1 test1.cpp)

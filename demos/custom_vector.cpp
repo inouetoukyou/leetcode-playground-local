@@ -3,12 +3,11 @@
 //
 #include <iostream>
 #include "../tools/vectortool"
-#include "../tools/stringtool"
 
 using namespace std;
 using namespace ymh;
 
-#if __GNUC__ <= 6 && __GNUC__ >= 5
+#if __GNUC__ >= 5 && __GNUC__ <= 6
 namespace ymh {
 #endif
 
@@ -25,7 +24,7 @@ public:
 using T = Interval;
 template<>
 
-#if __GNUC__ <= 6 && __GNUC__ >= 5
+#if __GNUC__ >= 5 && __GNUC__ <= 6
 //T stringToValue(const std::string &str) {
 auto stringToValue(const std::string &str) -> Interval {
 #else
@@ -47,7 +46,7 @@ auto ymh::stringToValue(const std::string &str) -> Interval {
 #endif
 
 using VectorGenerator = GenericVectorGenerator<T>;
-void output(vector<T> intervals) {
+void output(const vector<T>& intervals) {
     for (T t : intervals) {
         cout << t.start << " " << t.end << endl;
     }

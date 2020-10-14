@@ -1,9 +1,10 @@
 #include <helper.h>
+#include "subroutine_relative.h"
 using namespace std;
 
 class Solution {
 public:
-    int minTimeToVisitAllPoints(vector<vector<int>>& points) {
+    static int minTimeToVisitAllPoints(vector<vector<int>>& points) {
         int ans = 0;
         int n = points.size();
         for (int i = 1; i < n; ++i) {
@@ -15,11 +16,10 @@ public:
     }
 };
 int sub(){
-    Solution solution;
     string s;
     while (getline(cin, s)) {
         vector<vector<int>> points = getVector2(s);
-        int ans = solution.minTimeToVisitAllPoints(points);
+        int ans = Solution::minTimeToVisitAllPoints(points);
         cout << ans << endl;
     }
 
@@ -27,5 +27,5 @@ int sub(){
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub);
+    return subRoutine(argc, argv, sub, subroutine_relative);
 }

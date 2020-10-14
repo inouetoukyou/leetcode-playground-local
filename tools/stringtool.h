@@ -17,7 +17,7 @@ void trimLeftTrailingSpaces(std::string &input);
 void trimRightTrailingSpaces(std::string &input);
 
 template<class T>
-#if __GNUC__ <= 6 && __GNUC__ >= 5
+#if __GNUC__ >= 5 && __GNUC__ <= 6
 T stringToValue(const std::string &str);
 #else
 auto stringToValue(const std::string &str) -> T;

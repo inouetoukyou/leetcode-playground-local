@@ -23,7 +23,7 @@ class Solution {
      * （但是，如果A和B长度相等时，复杂度为O(m - x)，
      * 因为在遍历到最后一个节点之前就可以找到答案。）*/
 public:
-    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+    static ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         if (headA == nullptr || headB == nullptr) {
             return nullptr;
         }
@@ -326,7 +326,9 @@ int main(){
             "headA: 0 9 1 -\\\n"
             "               2 4\n"
             "headB:     3 -/\n";
-    ListNode *ans = solution1.getIntersectionNode(headA, headB);
+    ListNode *ans = Solution::getIntersectionNode(headA, headB);
+    assert(ans->val == 2);
+    ans = solution1.getIntersectionNode(headA, headB);
     assert(ans->val == 2);
     cout << "solution1 counts " << solution1.count << endl;
     ans = solution2.getIntersectionNode(headA, headB);
@@ -348,6 +350,8 @@ int main(){
     cout << "lists:\n"
             "headA:     0 9 1 2 4\n"
             "headC: 3 -/\n";
+    ans = Solution::getIntersectionNode(headA, headC);
+    assert(ans->val == 0);
     ans = solution1.getIntersectionNode(headA, headC);
     assert(ans->val == 0);
     cout << "solution1 counts " << solution1.count << endl;
@@ -383,6 +387,8 @@ int main(){
             "headA: 0 9 1 -\\\n"
             "               2 4\n"
             "headD: 5 6 7 -/\n";
+    ans = Solution::getIntersectionNode(headA, headD);
+    assert(ans->val == 2);
     ans = solution1.getIntersectionNode(headA, headD);
     assert(ans->val == 2);
     cout << "solution1 counts " << solution1.count << endl;

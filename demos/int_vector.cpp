@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    static vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> ans;
         int n = nums.size();
         if (n < 2) {
@@ -28,8 +28,8 @@ int main() {
     string s = "[2,7,11,15]";
     vector<int> nums = getVector(s);
     int target = 9;
-    Solution solution;
-    vector<int> ans = solution.twoSum(nums, target);
+    [[maybe_unused]] Solution solution;
+    vector<int> ans = Solution::twoSum(nums, target);
     outputVector(ans);
     return 0;
 }
