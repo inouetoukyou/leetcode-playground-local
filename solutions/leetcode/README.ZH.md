@@ -1,7 +1,8 @@
 # Solutions  
 [English Version](README.md)
 ## 简介
-&emsp;&emsp;这个文件夹包含了LeetCode的一些题目的答案。
+&emsp;&emsp;这个文件夹包含了LeetCode的一些题目的答案。  
+[LeetCode 答案索引](https://ytlw.github.io/leetcode/solution/?version=latest)
 ## 使用方式
 ### 头文件包含
 ```c++
