@@ -2,7 +2,7 @@
 [中文版](README.ZH.md)
 ## Descriptions
 &emsp;This directory contains some solutions of LeetCode.  
-[LeetCode Solutions Indices](https://ytlw.github.io/leetcode/solution/?version=latest)
+[LeetCode Solutions Indices](https://ytlw.github.io/leetcode/?version=latest)
 ## Usage
 ### include
 ```c++

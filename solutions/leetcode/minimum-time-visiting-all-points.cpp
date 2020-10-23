@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-    static int minTimeToVisitAllPoints(vector<vector<int>>& points) {
+    static int minTimeToVisitAllPoints(const vector<vector<int>>& points) {
         int ans = 0;
         int n = points.size();
         for (int i = 1; i < n; ++i) {
@@ -18,11 +18,8 @@ public:
 int sub(){
     string s;
     while (getline(cin, s)) {
-        vector<vector<int>> points = getVector2(s);
-        int ans = Solution::minTimeToVisitAllPoints(points);
-        cout << ans << endl;
+        cout << Solution::minTimeToVisitAllPoints(getVector2(s)) << endl;
     }
-
     return 0;
 }
 

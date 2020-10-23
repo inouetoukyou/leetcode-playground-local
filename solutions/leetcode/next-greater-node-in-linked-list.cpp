@@ -10,7 +10,7 @@ using ListNode = ymh::GenericListNode<T>;
 class Solution {
     /* use a stack*/
 public:
-    static vector<int> nextLargerNodes(ListNode* head) {
+    static vector<int> nextLargerNodes(ListNode* const head) {
         if (head == nullptr) {
             return vector<int>();
         }
@@ -39,8 +39,7 @@ int sub() {
     string s;
     while (getline(cin, s)) {
         ListNode *head = getList(s);
-        vector<int> ans = Solution::nextLargerNodes(head);
-        outputVector(ans);
+        outputVector(Solution::nextLargerNodes(head));
         ListNode::deleteList(head);
     }
     return 0;

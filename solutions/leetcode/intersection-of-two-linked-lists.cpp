@@ -259,7 +259,7 @@ public:
     int count;
 public:
     Solution3() : count(0) {}
-    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+    ListNode *getIntersectionNode(ListNode *const headA, ListNode *const headB) {
         count = 0;
         if (headA == nullptr || headB == nullptr) {
             return nullptr;
@@ -281,7 +281,7 @@ public:
         return tmp;
     }
 private:
-    ListNode *getEntryOfCircle(ListNode *head) {
+    ListNode *getEntryOfCircle(ListNode *const head) {
         ListNode *slow = head, *fast = head->next;
         ++count;
         while (fast != slow) {

@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    static vector<int> twoSum(vector<int>& nums, int target) {
+    static vector<int> twoSum(const vector<int>& nums, const int target) {
         vector<int> ans;
         int n = nums.size();
         if (n < 2) {
