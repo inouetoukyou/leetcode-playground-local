@@ -50,6 +50,6 @@ you can see all executable files.
 2. IDE mode (such as CLion)  
 a. If you want to compile the codes in `solutions`, create `CMakeSwitch.txt` in `solutions` .  
 b. Write source files in directory `mains` (such as `main.cpp` ) and optional associated input files in `input/mains` (such as `main.in` ).  
-c. Format of `main.cpp` can be referred to the examples in `test1.cpp` , `test2.cpp` or files in dir `solutions` and `demos`.  
+c. Format of `main.cpp` can be referred to the examples in `tests/test1.cpp` , `tests/test2.cpp` or files in dir `solutions` and `demos`.  
 e. Build and debug.  
 e. Every time you add new source files, you can click Tools->CMake->Reload CMake Project to refresh CMake configuration if you use CLion.  

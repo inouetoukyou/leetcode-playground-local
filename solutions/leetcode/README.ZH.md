@@ -2,7 +2,7 @@
 [English Version](README.md)
 ## 简介
 &emsp;&emsp;这个文件夹包含了LeetCode的一些题目的答案。  
-[LeetCode 答案索引](https://ytlw.github.io/leetcode/?version=latest)
+[LeetCode 答案索引](https://ytlw.github.io/leetcode)
 ## 使用方式
 ### 头文件包含
 ```c++
@@ -41,4 +41,5 @@ int main(int argc, char *argv[]) {
     return subRoutine(argc, argv, sub, "/../../input/");
 }
 ```
-然后在 `input/` 中创建对应的输入文件。可以参照位于顶层目录的 `test2.cpp` 的例子，并注意 `CMakeLists.txt` 里的 `target_compile_definitions(test2 PRIVATE -DLOCAL)`。  
+然后在 `input/` 中创建对应的输入文件。可以参照位于顶层目录的 `test2.cpp` 的例子，并注意 `CMakeLists.txt` 里的 `target_compile_definitions(test2 PRIVATE -DLOCAL)`。
+  

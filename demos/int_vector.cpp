@@ -28,7 +28,6 @@ int main() {
     string s = "[2,7,11,15]";
     vector<int> nums = getVector(s);
     int target = 9;
-    [[maybe_unused]] Solution solution;
     vector<int> ans = Solution::twoSum(nums, target);
     outputVector(ans);
     return 0;

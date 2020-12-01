@@ -135,7 +135,7 @@ void deleteTree(ymh::GenericTreeNode<T> *root) {
 }
 
 int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative) {
-#ifdef LOCAL
+#ifdef INPUT_FROM_FILE
     FILE *fre;
     if (argc == 1) {
         int lenArgv0 = strlen(argv[0]);
@@ -179,7 +179,7 @@ int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative) {
     }
 #endif
     int rtn = sub();
-#ifdef LOCAL
+#ifdef INPUT_FROM_FILE
     fclose(fre);
 #endif
     return rtn;

@@ -1,24 +1,14 @@
+//
+// Created by Minghang Yang on 2020/1/6.
+//
+
 #include <helper.h>
 #include <unordered_map>
 using namespace std;
 
-FILE *fre;
-
-[[maybe_unused]] __attribute((constructor))void before() {
-#ifdef LOCAL
-    fre = freopen("../../input/test3.in", "r", stdin);
-#endif
-}
-
-[[maybe_unused]] __attribute((destructor))void after() {
-#ifdef  LOCAL
-    fclose(fre);
-#endif
-}
-
 class Solution {
 public:
-    static vector<int> twoSum(vector<int>& nums, int target) {
+    static vector<int> twoSum(const vector<int>& nums, int target) {
         vector<int> ans;
         int n = nums.size();
         if (n < 2) {
@@ -38,9 +28,7 @@ public:
         return ans;
     }
 };
-
-int main() {
-    [[maybe_unused]] Solution solution;
+int sub() {
     string s;
     while (getline(cin, s)) {
         vector<int> nums = getVector(s);
@@ -51,4 +39,7 @@ int main() {
         outputVector(ans);
     }
     return 0;
+}
+int main(int argc, char *argv[]) {
+    return subRoutine(argc, argv, sub, "/../../../input/tests");
 }

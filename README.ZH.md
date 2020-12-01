@@ -51,6 +51,6 @@ c. 从文件读取输入 (`file_input.cpp` & `file_input2.cpp`)
 2. IDE 模式 (比如 CLion)。  
 a. 如果要编译 `solutions` 里的代码，请在 `solutions` 里创建一个文件 `CMakeSwitch.txt`。  
 b. 在文件夹 `mains` 中写源文件(比如 `main.cpp` )，并且可以在 `input/mains` 中写对应的输入文件(比如 `main.in` )。  
-c. `main.cpp` 的写法可以仿照 `test1.cpp` ， `test2.cpp` 或文件夹 `solutions` 和 `demos` 里的文件。  
+c. `main.cpp` 的写法可以仿照 `tests/test1.cpp` ， `tests/test2.cpp` 或文件夹 `solutions` 和 `demos` 里的文件。  
 d. 编译和调试。  
 e. 每一次你添加了新文件，如果是CLion，可以Tools->CMake->Reload CMake Project来刷新CMake的配置。  

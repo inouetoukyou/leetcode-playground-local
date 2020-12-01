@@ -1,10 +1,13 @@
 /.idea/
+/build/
 /cmake-build-debug/
 /mains/*
 !/mains/CMakeLists.txt
 /input/mains/*
 !/input/mains/README
 /solutions/leetcode/CMakeSwitch.txt
+/other_oj/
 *.out
 *.exe
 *.swp
+.DS_Store

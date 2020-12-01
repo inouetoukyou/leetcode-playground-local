@@ -31,13 +31,12 @@ int sub() {
         vector<int> nums = getVector(s);
         int target;
         cin >> target;
-        getline(cin, s); // eat '\n'
-        vector<int> ans = Solution::twoSum(nums, target);
-        outputVector(ans);
+        cin.ignore(1); // ignore one char (eat '\n' here)
+        outputVector(Solution::twoSum(nums, target));
     }
     return 0;
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, subroutine_relative);
+    return subRoutine(argc, argv, sub, subroutineRelative);
 }

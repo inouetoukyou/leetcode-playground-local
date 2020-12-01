@@ -38,5 +38,5 @@ int sub() {
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, subroutine_relative);
+    return subRoutine(argc, argv, sub, subroutineRelative);
 }
