@@ -37,8 +37,8 @@ c. get input from file (`file_input.cpp` & `file_input2.cpp`)
 
 ## Usage 
 1. command line mode  
-If you want to compile the codes in `solutions`, create `CMakeSwitch.txt` in `solutions` .  
-`$ touch solutions/CMakeSwitch.txt` (optional)  
+If you want to compile the codes in `solutions/leetcode`, create `CMakeSwitch.txt` in `solutions/leetcode` .  
+`$ touch solutions/leetcode/CMakeSwitch.txt` (optional)  
 `$ mkdir build`  
 `$ cd build`  
 `$ cmake ..`  
@@ -48,7 +48,7 @@ If you want to compile the codes in `solutions`, create `CMakeSwitch.txt` in `so
 you can see all executable files.
 
 2. IDE mode (such as CLion)  
-a. If you want to compile the codes in `solutions`, create `CMakeSwitch.txt` in `solutions` .  
+a. If you want to compile the codes in `solutions/leetcode`, create `CMakeSwitch.txt` in `solutions/leetcode` .  
 b. Write source files in directory `mains` (such as `main.cpp` ) and optional associated input files in `input/mains` (such as `main.in` ).  
 c. Format of `main.cpp` can be referred to the examples in `tests/test1.cpp` , `tests/test2.cpp` or files in dir `solutions` and `demos`.  
 e. Build and debug.  

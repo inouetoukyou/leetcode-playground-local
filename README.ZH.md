@@ -38,8 +38,8 @@ c. 从文件读取输入 (`file_input.cpp` & `file_input2.cpp`)
 
 ## 使用说明 
 1. 命令行方式  
-如果要编译 `solutions` 里的代码，请在 `solutions` 里创建一个文件 `CMakeSwitch.txt`。  
-`$ touch solutions/CMakeSwitch.txt` (可选的)   
+如果要编译 `solutions/leetcode` 里的代码，请在 `solutions/leetcode` 里创建一个文件 `CMakeSwitch.txt`。  
+`$ touch solutions/leetcode/CMakeSwitch.txt` (可选的)   
 `$ mkdir build`  
 `$ cd build`  
 `$ cmake ..`  
@@ -49,7 +49,7 @@ c. 从文件读取输入 (`file_input.cpp` & `file_input2.cpp`)
 你将看到所有可执行文件.
 
 2. IDE 模式 (比如 CLion)。  
-a. 如果要编译 `solutions` 里的代码，请在 `solutions` 里创建一个文件 `CMakeSwitch.txt`。  
+a. 如果要编译 `solutions/leetcode` 里的代码，请在 `solutions/leetcode` 里创建一个文件 `CMakeSwitch.txt`。  
 b. 在文件夹 `mains` 中写源文件(比如 `main.cpp` )，并且可以在 `input/mains` 中写对应的输入文件(比如 `main.in` )。  
 c. `main.cpp` 的写法可以仿照 `tests/test1.cpp` ， `tests/test2.cpp` 或文件夹 `solutions` 和 `demos` 里的文件。  
 d. 编译和调试。  
