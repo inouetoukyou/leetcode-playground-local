@@ -71,11 +71,11 @@ int sub() {
     string s;
     Solution solution;
     while (getline(cin, s)) {
-        vector<int> a(std::move(getVector(s)));
+        vector<int> a = std::move(getVector(s));
         if (!getline(cin, s)) {
             return 0;
         }
-        vector<int> b(std::move(getVector(s)));
+        vector<int> b = std::move(getVector(s));
         outputVector(solution.minimalDistance(a, b));
         cin.ignore(1); // eat '\n'
     }
