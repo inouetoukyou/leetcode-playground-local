@@ -6,6 +6,7 @@
 /input/mains/*
 !/input/mains/README
 /solutions/leetcode/CMakeSwitch.txt
+/solutions/lintcode/CMakeSwitch.txt
 /other_oj/
 *.out
 *.exe
