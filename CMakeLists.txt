@@ -3,7 +3,10 @@ project(oj)
 set(CMAKE_CXX_STANDARD 17)
 #https://support.leetcode.com/hc/en-us/articles/360011833974-What-are-the-environments-for-the-programming-languages-
 #clang10 c++17
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -fsanitize=address,undefined)
+set(CMAKE_CXX_FLAGS
+        ${CMAKE_CXX_FLAGS}
+        -fsanitize=address,undefined
+        )
 include_directories(include)
 
 FUNCTION(build_all_cpp INPUT_FROM_FILE)

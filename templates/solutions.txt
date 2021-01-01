@@ -1,0 +1,23 @@
+#include <helper.h>
+#include <treenode_int.h>
+#include <listnode_int.h>
+#include "subroutine_relative.h"
+
+using namespace std;
+
+class Solution {
+
+};
+
+int sub() {
+    string s;
+    Solution solution;
+    while (getline(cin, s)) {
+
+    }
+    return 0;
+}
+
+int main(int argc, char *argv[]) {
+    return subRoutine(argc, argv, sub, subroutineRelative);
+}
