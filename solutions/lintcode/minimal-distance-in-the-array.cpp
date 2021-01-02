@@ -1,6 +1,4 @@
-//
 // Created by Minghang Yang on 2021/1/1.
-//
 
 #include <helper.h>
 #include <vector>
