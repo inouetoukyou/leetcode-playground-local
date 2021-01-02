@@ -1,8 +1,5 @@
 // Created by Minghang Yang on 2021/1/3.
-
-#include <helper.h>
-#include <treenode_int.h>
-#include <listnode_int.h>
+#include <default.h>
 #include "subroutine_relative.h"
 
 using namespace std;
@@ -30,7 +27,6 @@ public:
             return 1;
         }
         int left = 1, right = n;
-        int cnt = 0;
         do {
             int mid = left + ((right - left) >> 1);
             int t = guess(mid);
@@ -49,9 +45,9 @@ int sub() {
     string s;
     Solution solution;
     while (getline(cin, s)) {
-        int n = atoi(s.c_str());
+        int n = stoi(s);
         getline(cin, s);
-        int sec = atoi(s.c_str());
+        int sec = stoi(s);
         solution.setSecret(sec);
         cout << solution.guessNumber(n) << endl;
     }

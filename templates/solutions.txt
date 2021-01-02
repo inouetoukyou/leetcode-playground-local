@@ -1,8 +1,5 @@
-#include <helper.h>
-#include <treenode_int.h>
-#include <listnode_int.h>
+#include <default.h>
 #include "subroutine_relative.h"
-
 using namespace std;
 
 class Solution {
