@@ -1,9 +1,6 @@
-#include <helper.h>
+#include "custom.h"
 #include <cassert>
 using namespace std;
-
-using T = int;
-using ListNode = ymh::GenericListNode<T>;
 
 /*
  * class Solution is the answer

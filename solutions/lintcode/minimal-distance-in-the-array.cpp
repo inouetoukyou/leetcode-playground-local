@@ -1,8 +1,6 @@
 // Created by Minghang Yang on 2021/1/1.
 
-#include <helper.h>
-#include <vector>
-#include "subroutine_relative.h"
+#include "custom.h"
 using namespace std;
 
 void binary_search(vector<int> &a, int target, int &left, int &right) {
