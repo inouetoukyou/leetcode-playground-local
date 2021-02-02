@@ -38,7 +38,7 @@ public:
 };
 int main() {
     string input;
-    ifstream in = ifstream("../../../input/demos/file_input.in");
+    ifstream in = ifstream("../../../demos/file_input.in");
     getline(in, input);
     int K;
     in >> K;

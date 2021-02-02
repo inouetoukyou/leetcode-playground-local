@@ -12,7 +12,7 @@
 #include <helper.h>
 #include <cassert>
 using namespace std;
-#define LOCAL
+#define INPUT_FROM_FILE
 class Solution {
 public:
     static double largestSumOfAverages(vector<int>& A, int K) {
@@ -38,8 +38,8 @@ public:
 };
 int main() {
     string input;
-#ifdef LOCAL
-    FILE* fptr = freopen("../../../input/demos/file_input.in", "r", stdin);
+#ifdef INPUT_FROM_FILE
+    FILE* fptr = freopen("../../../demos/file_input.in", "r", stdin);
     assert(fptr);
 #endif
     getline(cin, input);
@@ -55,7 +55,7 @@ int main() {
     vector<int> A = getVector(input);
     outputVector(A);
     cout << Solution::largestSumOfAverages(A, K) << endl;
-#ifdef LOCAL
+#ifdef INPUT_FROM_FILE
     fclose(fptr);
 #endif
     return 0;

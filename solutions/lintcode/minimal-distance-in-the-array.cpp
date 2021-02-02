@@ -1,6 +1,6 @@
 // Created by Minghang Yang on 2021/1/1.
 
-#include "custom.h"
+#include "lintcode.h"
 using namespace std;
 
 void binary_search(vector<int> &a, int target, int &left, int &right) {
@@ -79,5 +79,5 @@ int sub() {
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, subroutineRelative);
+    return subRoutine(argc, argv, sub);
 }

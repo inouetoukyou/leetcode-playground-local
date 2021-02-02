@@ -20,10 +20,10 @@ G++-5可以运行，但是不建议使用。
 a. 如何将 `string` 解析成 `ListNode`, `TreeNode` 以及 `vector`  
 b. 如何输出 `vector`  
 c. 如何从文件中读取输入   
-2. 最上层目录的 `test2.cpp` 展示：  
+2. 最上层目录的 `test2.cpp` 向我们展示：  
 a. 如何运行一个经典的 two-sum 问题  
-b. 该程序从对应的 `input/test2.in` 中读取输入（请留意 `main` 函数和 `sub` 函数，`subRoutine` 函数请参照 `input/helper.h` 。最后查看 `CMakeLists.txt.copy` 最后一行，它为 `test2.cpp` 添加 `LOCAL` 定义。）  
-3. 子文件夹 `demos`展示    
+b. 该程序从当前文件夹对应的文件读取输入。
+3. 子文件夹 `demos` 向我们展示：  
 a. 如何把 `string` 解析为其他类型  
 `vector<vector<char>>` (`char_doublevector.cpp`)  
 `vector<Interval>` (`custom_vector.cpp`)  
@@ -50,7 +50,7 @@ c. 从文件读取输入 (`file_input.cpp` & `file_input2.cpp`)
 
 2. IDE 模式 (比如 CLion)。  
 a. 如果要编译 `solutions/leetcode` 里的代码，请在 `solutions/leetcode` 里创建一个文件 `CMakeSwitch.txt`。  
-b. 在文件夹 `mains` 中写源文件(比如 `main.cpp` )，并且可以在 `input/mains` 中写对应的输入文件(比如 `main.in` )。  
+b. 在文件夹 `mains` 中写源文件(比如 `main.cpp` )，并且可以在当前文件夹中写对应的输入文件(比如 `main.in` )。  
 c. `main.cpp` 的写法可以仿照 `tests/test1.cpp` ， `tests/test2.cpp` 或文件夹 `solutions` 和 `demos` 里的文件。  
 d. 编译和调试。  
 e. 每一次你添加了新文件，如果是CLion，可以Tools->CMake->Reload CMake Project来刷新CMake的配置。  

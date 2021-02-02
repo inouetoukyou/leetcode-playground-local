@@ -22,7 +22,7 @@ b. how to output `vector`
 c. how to handle input through a file  
 2. `test2.cpp` in the top level directory shows:   
 a. how to run a classical two-sum problem  
-b. it gets input from the corresponding input file in `input/test2.in` (Note the function`main` and function `sub` ,and refer to `input/helper.h` for details of function `subRoutine`. Finally, please note the last line of `CMakeLists.txt.copy`, which adds definition `LOCAL` to `test2.cpp`.)  
+b. it gets input from the corresponding input file in current directory.
 3. In subdirectory `demos`, you can  
 a. see how to parse `string` to other types  
 `vector<vector<char>>` (`char_doublevector.cpp`)  
@@ -49,7 +49,7 @@ you can see all executable files.
 
 2. IDE mode (such as CLion)  
 a. If you want to compile the codes in `solutions/leetcode`, create `CMakeSwitch.txt` in `solutions/leetcode` .  
-b. Write source files in directory `mains` (such as `main.cpp` ) and optional associated input files in `input/mains` (such as `main.in` ).  
+b. Write source files in current directory `mains` (such as `main.cpp` ) and optional associated input files in current directory (such as `main.in` ).  
 c. Format of `main.cpp` can be referred to the examples in `tests/test1.cpp` , `tests/test2.cpp` or files in dir `solutions` and `demos`.  
 e. Build and debug.  
 e. Every time you add new source files, you can click Tools->CMake->Reload CMake Project to refresh CMake configuration if you use CLion.  

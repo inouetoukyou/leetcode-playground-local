@@ -5,13 +5,13 @@ using namespace std;
 FILE *fre;
 
 __attribute((constructor))void before() {
-#ifdef LOCAL
-    fre = freopen("../../../input/tests/test3.in", "r", stdin);
+#ifdef INPUT_FROM_FILE
+    fre = freopen("../../../tests/test3.in", "r", stdin);
 #endif
 }
 
 __attribute((destructor))void after() {
-#ifdef  LOCAL
+#ifdef  INPUT_FROM_FILE
     fclose(fre);
 #endif
 }

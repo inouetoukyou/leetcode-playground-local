@@ -10,7 +10,7 @@ class Solution {
 };
 
 int main() {
-    string fileSource = "../../../input/tests/test1.in";
+    string fileSource = "../../../tests/test1.in";
     // test ListNode
     cout << "test ListNode:\n";
     cout << "traverse ListNode:\n\t";

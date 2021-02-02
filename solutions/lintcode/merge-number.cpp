@@ -2,7 +2,7 @@
 
 // 791. Merge Number
 // Given n numbers, now we need to merge n numbers into one number. And each time we can only select and merge two numbers a,b. Each merger needs to consume a+b energy. Output the minimum energy consumed by merging n numbers.
-#include "custom.h"
+#include "lintcode.h"
 
 using namespace std;
 
@@ -41,5 +41,5 @@ int sub() {
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, subroutineRelative);
+    return subRoutine(argc, argv, sub);
 }

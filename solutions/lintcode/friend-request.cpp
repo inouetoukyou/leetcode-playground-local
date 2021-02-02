@@ -9,7 +9,7 @@
 // if Age(B) < 100 and Age(A) > 100, A will not send a request to B.
 // if it does not satisfy 1,2,3, then A will send a request to B
 
-#include "custom.h"
+#include "lintcode.h"
 
 using namespace std;
 
@@ -48,7 +48,7 @@ public:
                 }
             }
             else {
-                int least = std::min((ages[i] >> 1) + 7, ages[i]);
+                int least = ages[i] / 2 + 7;
                 int k = 0;
                 while (k < i && ages[k] <= least){
                     ++k;
@@ -56,6 +56,23 @@ public:
                 // k是B达到最小的值时的坐标
                 if (k < i) {
                     ans += (i - k) * multi;
+                }
+            }
+        }
+        return ans;
+    }
+
+    int friendRequest2(vector<int> &ages) {
+        int ans = 0;
+        for(int i = 0; i < ages.size(); i++) {
+            for(int j = 0; j < ages.size(); j++) {
+                if(i == j) {
+                    continue;
+                }
+                int A = ages[i];
+                int B = ages[j];
+                if(B <= A && B > A / 2 + 7 && !(B < 100 && A > 100)) {
+                    ans++;
                 }
             }
         }
@@ -71,11 +88,12 @@ int sub() {
         if (ages.size() == 0) {// use blank line to execute part of test
             break;
         }
-        cout << solution.friendRequest(ages) << endl;
+        cout << solution.friendRequest(ages) << ' '
+        << solution.friendRequest2(ages) << endl;
     }
     return 0;
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, subroutineRelative);
+    return subRoutine(argc, argv, sub);
 }

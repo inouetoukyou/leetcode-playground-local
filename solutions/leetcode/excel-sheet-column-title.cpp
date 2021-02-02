@@ -1,4 +1,4 @@
-#include "custom.h"
+#include "leetcode.h"
 
 using namespace std;
 
@@ -31,5 +31,5 @@ int sub() {
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, subroutineRelative);
+    return subRoutine(argc, argv, sub);
 }

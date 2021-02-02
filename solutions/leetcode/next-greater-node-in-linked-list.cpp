@@ -1,6 +1,6 @@
 // Created by Minghang Yang on 2020/1/5.
 
-#include "custom.h"
+#include "leetcode.h"
 using namespace std;
 using T = int;
 using ListNode = ymh::GenericListNode<T>;
@@ -43,5 +43,5 @@ int sub() {
 }
 
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, subroutineRelative);
+    return subRoutine(argc, argv, sub);
 }

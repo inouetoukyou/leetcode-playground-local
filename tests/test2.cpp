@@ -41,5 +41,5 @@ int sub() {
     return 0;
 }
 int main(int argc, char *argv[]) {
-    return subRoutine(argc, argv, sub, "/../../../input/tests");
+    return subRoutine(argc, argv, sub, "../../../tests");
 }
