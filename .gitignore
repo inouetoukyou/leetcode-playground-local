@@ -3,6 +3,7 @@
 /cmake-build-debug/
 /mains/*
 !/mains/CMakeLists.txt
+!/mains/newcoder.h
 /input/mains/*
 !/input/mains/README
 /solutions/leetcode/CMakeSwitch.txt
