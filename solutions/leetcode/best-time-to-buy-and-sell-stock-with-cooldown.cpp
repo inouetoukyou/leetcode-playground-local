@@ -2,7 +2,9 @@
 
 // Say you have an array for which the ith element is the price of a given stock on day i.
 //
-// Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times) with the following restrictions:
+// Design an algorithm to find the maximum profit.
+// You may complete as many transactions as you like
+// (ie, buy one and sell one share of the stock multiple times) with the following restrictions:
 //
 // You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 // After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)
@@ -17,38 +19,14 @@ public:
         if (n < 2) {
             return 0;
         }
-        vector<int> peak, valley;
-        int i = 0;
-        while (i < n) {
-            int cur = prices[i];
-            ++i;
-            while (i < n && prices[i] <= cur) {
-                ++i;
-            }
-            valley.push_back(i - 1);
-            cur = prices[i];
-            ++i;
-            while (i < n && prices[i] > cur) {
-                ++i;
-            }
-            peak.push_back(i - 1);
+        int f0, f1, f2; // f0: with stock, f1: without stock and during cooldown, f2: without stock and not during cooldown
+        f0 = -prices[0];
+        f1 = 0;
+        f2 = 0;
+        for (int i = 1; i < n; ++i) {
+            tie(f0, f1, f2) = make_tuple(max(f0, f2 - prices[i]), f0 + prices[i], max(f1, f2));
         }
-        int pn = peak.size();
-        int vn = valley.size();
-        n = pn < vn ? pn : vn;
-        int ans = 0;
-        if (n == 0) {
-            return ans;
-        }
-        for (i = 0; i < n - 1; ++i) {
-            if (peak[i] + 1 < valley[i + 1]) {
-                ans += prices[peak[i]] - prices[valley[i]];
-            } else {
-
-            }
-        }
-        ans += prices[peak[n - 1]] - prices[valley[n - 1]];
-        return ans;
+        return max(f1, f2);
     }
 };
 
