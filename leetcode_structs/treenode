@@ -24,6 +24,10 @@ template<class T>
 GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input, char delim) {
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
+    auto n = input.length();
+    if (n < 2) {
+        return nullptr;
+    }
     std::string input1 = input.substr(1, input.length() - 2);
     if (input1.empty()) {
         return nullptr;
