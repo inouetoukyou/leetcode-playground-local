@@ -4,29 +4,25 @@ using namespace std;
 
 class Solution {
 private:
-    int longestConsecutiveHelper(TreeNode *root, int &ans) {
+    int helper(TreeNode *root, int &ans) {
         if (root == nullptr) {
             return 0;
         }
-        int t1 = longestConsecutiveHelper(root->left, ans);
-        int t2 = longestConsecutiveHelper(root->right, ans);
-        if (root->left == nullptr || root->left->val - 1 == root->val) {
-            ++t1;
+        auto left = helper(root->left, ans);
+        auto right = helper(root->right, ans);
+        if (root->left != nullptr && root->val + 1 == root->left->val) {
+            ++left;
         } else {
-            t1 = 1;
+            left = 1;
         }
-        if (root->right == nullptr || root->right->val - 1 == root->val) {
-            ++t2;
+        if (root->right != nullptr && root->val + 1 == root->right->val) {
+            ++right;
         } else {
-            t2 = 1;
+            right = 1;
         }
-        if (ans < t1) {
-            ans = t1;
-        }
-        if (ans < t2) {
-            ans = t2;
-        }
-        return t1 > t2 ? t1 : t2;
+        int v = max(left, right);
+        ans = max(ans, v);
+        return v;
     }
 public:
     /**
@@ -35,7 +31,7 @@ public:
      */
     int longestConsecutive(TreeNode * root) {
         int ans = 0;
-        longestConsecutiveHelper(root, ans);
+        helper(root, ans);
         return ans;
     }
 };
