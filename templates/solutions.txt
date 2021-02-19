@@ -9,7 +9,9 @@ int sub() {
     string s;
     Solution solution;
     while (getline(cin, s)) {
-
+        if (s == "") {
+            break;
+        }
     }
     return 0;
 }
