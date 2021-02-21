@@ -4,14 +4,14 @@ using namespace std;
 void solve();
 int main() {
 #ifdef INPUT_FROM_FILE
-    cin.sync_with_stdio(false);
-    cin.tie(0);
     FILE *fre = freopen("atcoder.in", "r", stdin);
     if (fre == nullptr) {
         cout << "invalid input file" << endl;
         return 0;
     }
 #endif
+    cin.sync_with_stdio(false);
+    cin.tie(0);
     while (!feof(stdin)) {
         int c = fgetc(stdin);
         if (c == -1 || c == '\n') {
