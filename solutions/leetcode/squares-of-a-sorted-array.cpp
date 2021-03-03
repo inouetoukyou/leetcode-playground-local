@@ -39,7 +39,7 @@ public:
                     ans.push_back(nums[left] * nums[left]);
                     --left;
                 } else {
-                    if ((-nums[left]) > nums[right]) {
+                    if ((-nums[left]) < nums[right]) {
                         ans.push_back(nums[left] * nums[left]);
                         --left;
                     } else {
