@@ -24,12 +24,11 @@ public:
                 ans.push_back(nums[i] * nums[i]);
             }
         } else {
-            auto finalNegativePos = 0;
             auto i = 0;
             while (i < n && nums[i] < 0) {
                 ++i;
             }
-            finalNegativePos = i - 1;
+            auto finalNegativePos = i - 1;
             auto left = finalNegativePos, right = i;
             while (left >= 0 || right < n) {
                 if (left < 0) {
