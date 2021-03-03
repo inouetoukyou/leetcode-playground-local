@@ -14,4 +14,5 @@
 485 Max Consecutive Ones
 605 Can Place Flowers
 714 Best Time to Buy and Sell Stock with Transaction Fee
+1295 Find Numbers with Even Number of Digits
 1346 Check If N and Its Double Exist
