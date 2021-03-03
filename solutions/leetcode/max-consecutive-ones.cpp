@@ -29,6 +29,7 @@ public:
                 }
                 if (t > ans) {
                     ans = t;
+                    end = n - ans;
                 }
             } else {
                 ++i;
