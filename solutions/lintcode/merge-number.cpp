@@ -1,7 +1,10 @@
 // Created by Minghang Yang on 2021/1/3.
 
 // 791. Merge Number
-// Given n numbers, now we need to merge n numbers into one number. And each time we can only select and merge two numbers a,b. Each merger needs to consume a+b energy. Output the minimum energy consumed by merging n numbers.
+// Given n numbers, now we need to merge n numbers into one number.
+// And each time we can only select and merge two numbers a,b.
+// Each merger needs to consume a+b energy. Output the minimum energy
+// consumed by merging n numbers.
 #include "lintcode.h"
 
 using namespace std;

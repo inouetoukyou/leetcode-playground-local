@@ -1,8 +1,10 @@
 // Created by yangminghang on 2021/1/3.
 
 // 895. Friend Request
-// Given an array Ages of length n, where the first i elements represent the age of the individual i.
-// Find total number of friend requests sent by this n person. There are some requirements:
+// Given an array Ages of length n, where the
+// first i elements represent the age of the individual i.
+// Find total number of friend requests sent
+// by this n person. There are some requirements:
 //
 // if Age(B) <= (1/2)Age(A) + 7, A will not send a request to B.
 // if Age(B) > Age(A), A will not send a request to B.
