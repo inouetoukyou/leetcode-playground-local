@@ -1,4 +1,5 @@
 1 Two Sum
+27 Remove Element
 88 Merge Sorted Array
 102 Binary Tree Level Order Traversal
 121 Best Time to Buy and Sell Stock
