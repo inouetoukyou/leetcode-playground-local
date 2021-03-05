@@ -22,6 +22,9 @@ public:
             return false;
         }
         int i;
+        if (arr[0] >= arr[1]) {
+            return false;
+        }
         for (i = 1; i < n && arr[i] > arr[i - 1]; ++i) {
         }
         if (i == n || arr[i - 1] == arr[i]) {
@@ -30,6 +33,26 @@ public:
         for (++i; i < n && arr[i] < arr[i - 1]; ++i) {
         }
         return i == n;
+    }
+
+public:
+    bool validMountainArray2(vector<int> &arr) {
+        int n = arr.size();
+        int i = 0;
+
+        // walk up
+        while (i + 1 < n && arr[i] < arr[i + 1])
+            i++;
+
+        // peak can't be first or last
+        if (i == 0 || i == n - 1)
+            return false;
+
+        // walk down
+        while (i + 1 < n && arr[i] > arr[i + 1])
+            i++;
+
+        return i == n - 1;
     }
 };
 
@@ -41,7 +64,8 @@ int sub() {
             break;
         }
         auto arr = getVector(s);
-        cout << boolalpha << solution.validMountainArray(arr) << endl;
+        cout << boolalpha << solution.validMountainArray(arr) << ' '
+             << solution.validMountainArray2(arr) << endl;
     }
     return 0;
 }
