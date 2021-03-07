@@ -19,9 +19,16 @@ def sort_file(file):
 
     f = open(file, 'w')
 
+    duplicated = []
     for i in range(n - 1):
         f.write(' '.join(lines[i]) + '\n')
+        if i > 0 and lines[i][0] == lines[i - 1][0]:
+            duplicated.append(lines[i][0])
     f.write(' '.join(lines[n - 1]))
+    if duplicated:
+        print('duplicated!!! items are as following:')
+        for d in duplicated:
+            print(d)
     f.close()
 
 
