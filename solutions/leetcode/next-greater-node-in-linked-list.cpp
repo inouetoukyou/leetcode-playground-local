@@ -2,8 +2,6 @@
 
 #include "leetcode.h"
 using namespace std;
-using T = int;
-using ListNode = ymh::GenericListNode<T>;
 class Solution {
     /* use a stack*/
 public:

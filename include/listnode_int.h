@@ -4,5 +4,5 @@
 
 #ifndef OJ_LISTNODE_INT_H
 #define OJ_LISTNODE_INT_H
-using ListNode = ymh::GenericListNode<int>;
+#define ListNode ymh::GenericListNode<int>
 #endif //OJ_LISTNODE_INT_H

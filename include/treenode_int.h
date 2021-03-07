@@ -5,7 +5,7 @@
 
 #ifndef OJ_TREENODE_INT_H
 #define OJ_TREENODE_INT_H
-using TreeNode = ymh::GenericTreeNode<int>;
+#define TreeNode ymh::GenericTreeNode<int>
 #include <string>
 void prettyPrintTree(TreeNode * node, const std::string& prefix = "", bool isLeft = true) {
     if (node == nullptr) {

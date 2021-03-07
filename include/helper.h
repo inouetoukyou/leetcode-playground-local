@@ -110,27 +110,27 @@ void deleteList(ymh::GenericListNode<T> *head) {
 }
 
 template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
-ymh::GenericTreeNode<T> *getTree(std::string &input, char delim = ',') {
+TreeNode *getTree(std::string &input, char delim = ',') {
     return ymh::TreeNodeFactory<T, TreeNode>::stringToTreeNode(input, delim);
 }
 
 template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
-std::vector<int> preorderTraverseTree(ymh::GenericTreeNode<T> *root) {
+std::vector<int> preorderTraverseTree(TreeNode *root) {
     return ymh::TreeNodeFactory<T, TreeNode>::preorderTraverse(root);
 }
 
 template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
-std::vector<int> postorderTraverseTree(ymh::GenericTreeNode<T> *root) {
+std::vector<int> postorderTraverseTree(TreeNode *root) {
     return ymh::TreeNodeFactory<T, TreeNode>::postorderTraverse(root);
 }
 
 template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
-std::vector<int> inorderTraverseTree(ymh::GenericTreeNode<T> *root) {
+std::vector<int> inorderTraverseTree(TreeNode *root) {
     return ymh::TreeNodeFactory<T, TreeNode>::inorderTraverse(root);
 }
 
 template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
-void deleteTree(ymh::GenericTreeNode<T> *root) {
+void deleteTree(TreeNode *root) {
     ymh::TreeNodeFactory<T, TreeNode>::deleteTree(root);
 }
 
