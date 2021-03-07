@@ -35,6 +35,9 @@ public:
                 can[1] = nums[i];
                 ++cnt;
             } else if (nums[i] == can[1]) {
+                if (nums[i] == INT_MIN) {
+                    ++cnt;
+                }
                 continue;
             } else if (nums[i] > can[2]) {
                 can[2] = nums[i];
