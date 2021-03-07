@@ -39,6 +39,8 @@ public:
             } else if (nums[i] > can[2]) {
                 can[2] = nums[i];
                 ++cnt;
+            } else if (nums[i] == can[2] && nums[i] == INT_MIN) {
+                ++cnt;
             }
         }
         if (cnt >= 3) {
