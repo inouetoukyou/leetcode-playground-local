@@ -27,21 +27,21 @@ public:
                 can[2] = can[1];
                 can[1] = can[0];
                 can[0] = nums[i];
-                cnt = 1;
+                ++cnt;
             } else if (nums[i] == can[0]) {
                 continue;
             } else if (nums[i] > can[1]) {
                 can[2] = can[1];
                 can[1] = nums[i];
-                cnt = 2;
+                ++cnt;
             } else if (nums[i] == can[1]) {
                 continue;
             } else if (nums[i] > can[2]) {
                 can[2] = nums[i];
-                cnt = 3;
+                ++cnt;
             }
         }
-        if (cnt == 3) {
+        if (cnt >= 3) {
             return can[2];
         } else {
             return can[0];
