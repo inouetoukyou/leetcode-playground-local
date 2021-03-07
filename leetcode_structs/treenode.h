@@ -7,20 +7,22 @@ namespace ymh {
 template<class T>
 struct GenericTreeNode {
     T val;
-    GenericTreeNode *left;
-    GenericTreeNode *right;
+    GenericTreeNode *left, *right;
 
-    GenericTreeNode(T x);
+    GenericTreeNode(T t);
+};
 
-    static GenericTreeNode *stringToTreeNode(std::string &input, char delim = ',');
+template<class T, class TreeNode>
+struct TreeNodeFactory {
+    static TreeNode *stringToTreeNode(std::string &input, char delim = ',');
 
-    static std::vector<T> preorderTraverse(GenericTreeNode *root);
+    static std::vector<T> preorderTraverse(TreeNode *root);
 
-    static std::vector<T> inorderTraverse(GenericTreeNode *root);
+    static std::vector<T> inorderTraverse(TreeNode *root);
 
-    static std::vector<T> postorderTraverse(GenericTreeNode *root);
+    static std::vector<T> postorderTraverse(TreeNode *root);
 
-    static void deleteTree(GenericTreeNode *root);
+    static void deleteTree(TreeNode *root);
 };
 }
 #endif //OJ_TREENODE_H

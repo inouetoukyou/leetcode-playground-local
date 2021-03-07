@@ -7,7 +7,7 @@
 #include <stack>
 namespace ymh {
 template<class T>
-GenericTreeNode<T>::GenericTreeNode(T x) : val(x), left(nullptr), right(nullptr) {}
+GenericTreeNode<T>::GenericTreeNode(T t) : val(t), left(nullptr), right(nullptr) {}
 
 /*
 construct a Tree from string
@@ -20,8 +20,8 @@ construct a Tree from string
 Note: make sure you use the right method to get input
  `getline(cin, input)` is better than `cin >> input`
 */
-template<class T>
-GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input, char delim) {
+template<class T, class TreeNode>
+TreeNode *TreeNodeFactory<T, TreeNode>::stringToTreeNode(std::string &input, char delim) {
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
     auto n = input.length();
@@ -40,12 +40,12 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input, cha
     if (delim == ' ' && item == "") {
         return nullptr;
     }
-    auto root = new GenericTreeNode(stringToValue<T>(item));
-    std::queue<GenericTreeNode *> nodeQueue;
+    auto root = new TreeNode(stringToValue<T>(item));
+    std::queue<TreeNode *> nodeQueue;
     nodeQueue.push(root);
 
     while (true) {
-        GenericTreeNode *node = nodeQueue.front();
+        TreeNode *node = nodeQueue.front();
         nodeQueue.pop();
         if (!getline(ss, item, delim)) {
             break;
@@ -57,7 +57,7 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input, cha
         trimRightTrailingSpaces(item);
         if (item != "null" && item != "#") {
             auto leftNumber = stringToValue<T>(item);
-            node->left = new GenericTreeNode(leftNumber);
+            node->left = new TreeNode(leftNumber);
             nodeQueue.push(node->left);
         }
 
@@ -81,23 +81,23 @@ GenericTreeNode<T> *GenericTreeNode<T>::stringToTreeNode(std::string &input, cha
         trimRightTrailingSpaces(item);
         if (item != "null" && item != "#") {
             auto rightNumber = stringToValue<T>(item);
-            node->right = new GenericTreeNode(rightNumber);
+            node->right = new TreeNode(rightNumber);
             nodeQueue.push(node->right);
         }
     }
     return root;
 }
 
-template<class T>
-std::vector<T> GenericTreeNode<T>::preorderTraverse(GenericTreeNode *root) {
+template<class T, class TreeNode>
+std::vector<T> TreeNodeFactory<T, TreeNode>::preorderTraverse(TreeNode *root) {
     std::vector<T> ans;
     if (root == nullptr) {
         return ans;
     }
-    std::stack<GenericTreeNode *> s;
+    std::stack<TreeNode *> s;
     s.push(root);
     while (!s.empty()) {
-        GenericTreeNode *node = s.top();
+        TreeNode *node = s.top();
         s.pop();
         ans.push_back(node->val);
         if (node->right != nullptr) {
@@ -110,11 +110,11 @@ std::vector<T> GenericTreeNode<T>::preorderTraverse(GenericTreeNode *root) {
     return ans;
 }
 
-template<class T>
-std::vector<T> GenericTreeNode<T>::inorderTraverse(GenericTreeNode *root) {
+template<class T, class TreeNode>
+std::vector<T> TreeNodeFactory<T, TreeNode>::inorderTraverse(TreeNode *root) {
     std::vector<T> ans;
-    std::stack<GenericTreeNode*> stack;
-    GenericTreeNode *node = root;
+    std::stack<TreeNode *> stack;
+    TreeNode *node = root;
     while (node != nullptr || !stack.empty()) {
         while (node != nullptr) {
             stack.push(node);
@@ -128,11 +128,11 @@ std::vector<T> GenericTreeNode<T>::inorderTraverse(GenericTreeNode *root) {
     return ans;
 }
 
-template<class T>
-std::vector<T> GenericTreeNode<T>::postorderTraverse(GenericTreeNode *root) {
+template<class T, class TreeNode>
+std::vector<T> TreeNodeFactory<T, TreeNode>::postorderTraverse(TreeNode *root) {
     std::vector<T> ans;
-    std::stack<GenericTreeNode*> stack;
-    GenericTreeNode *node = root, *last_visited = nullptr;
+    std::stack<TreeNode *> stack;
+    TreeNode *node = root, *last_visited = nullptr;
     while (node != nullptr || !stack.empty()) {
         while (node != nullptr) {
             stack.push(node);
@@ -144,23 +144,23 @@ std::vector<T> GenericTreeNode<T>::postorderTraverse(GenericTreeNode *root) {
             ans.push_back(node->val);
             last_visited = node;
             node = nullptr;
-        }
-        else {
+        } else {
             node = node->right;
         }
     }
     return ans;
 }
-template<class T>
-void GenericTreeNode<T>::deleteTree(GenericTreeNode *root) {
+
+template<class T, class TreeNode>
+void TreeNodeFactory<T, TreeNode>::deleteTree(TreeNode *root) {
     // delete in preorder
     if (root == nullptr) {
         return;
     }
-    std::stack<GenericTreeNode *> s;
+    std::stack<TreeNode *> s;
     s.push(root);
     while (!s.empty()) {
-        GenericTreeNode *node = s.top();
+        TreeNode *node = s.top();
         s.pop();
         if (node->right != nullptr) {
             s.push(node->right);

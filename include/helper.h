@@ -109,29 +109,29 @@ void deleteList(ymh::GenericListNode<T> *head) {
     ymh::GenericListNode<T>::deleteList(head);
 }
 
-template <class T = int>
+template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
 ymh::GenericTreeNode<T> *getTree(std::string &input, char delim = ',') {
-    return ymh::GenericTreeNode<T>::stringToTreeNode(input, delim);
+    return ymh::TreeNodeFactory<T, TreeNode>::stringToTreeNode(input, delim);
 }
 
-template <class T>
+template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
 std::vector<int> preorderTraverseTree(ymh::GenericTreeNode<T> *root) {
-    return ymh::GenericTreeNode<T>::preorderTraverse(root);
+    return ymh::TreeNodeFactory<T, TreeNode>::preorderTraverse(root);
 }
 
-template <class T>
+template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
 std::vector<int> postorderTraverseTree(ymh::GenericTreeNode<T> *root) {
-    return ymh::GenericTreeNode<T>::postorderTraverse(root);
+    return ymh::TreeNodeFactory<T, TreeNode>::postorderTraverse(root);
 }
 
-template <class T>
+template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
 std::vector<int> inorderTraverseTree(ymh::GenericTreeNode<T> *root) {
-    return ymh::GenericTreeNode<T>::inorderTraverse(root);
+    return ymh::TreeNodeFactory<T, TreeNode>::inorderTraverse(root);
 }
 
-template <class T>
+template<class T = int, class TreeNode = ymh::GenericTreeNode<T>>
 void deleteTree(ymh::GenericTreeNode<T> *root) {
-    ymh::GenericTreeNode<T>::deleteTree(root);
+    ymh::TreeNodeFactory<T, TreeNode>::deleteTree(root);
 }
 
 int subRoutine(int argc, char *argv[], int(*sub)(), const char* relative) {
