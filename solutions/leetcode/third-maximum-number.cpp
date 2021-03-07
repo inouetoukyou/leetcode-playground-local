@@ -20,6 +20,7 @@ class Solution {
 public:
     int thirdMax(vector<int> &nums) {
         vector<int> can(3, INT_MIN);
+        vector<bool> hasBeenMin(3, false);
         int cnt = 0;
         int n = nums.size();
         for (int i = 0; i < n; ++i) {
@@ -29,8 +30,9 @@ public:
                 can[0] = nums[i];
                 ++cnt;
             } else if (nums[i] == can[0]) {
-                if (nums[i] == INT_MIN) {
+                if (nums[i] == INT_MIN && !hasBeenMin[0]) {
                     ++cnt;
+                    hasBeenMin[0] = true;
                 }
                 continue;
             } else if (nums[i] > can[1]) {
@@ -38,15 +40,17 @@ public:
                 can[1] = nums[i];
                 ++cnt;
             } else if (nums[i] == can[1]) {
-                if (nums[i] == INT_MIN) {
+                if (nums[i] == INT_MIN && !hasBeenMin[1]) {
                     ++cnt;
+                    hasBeenMin[1] = true;
                 }
                 continue;
             } else if (nums[i] > can[2]) {
                 can[2] = nums[i];
                 ++cnt;
-            } else if (nums[i] == can[2] && nums[i] == INT_MIN) {
+            } else if (nums[i] == can[2] && nums[i] == INT_MIN && !hasBeenMin[2]) {
                 ++cnt;
+                hasBeenMin[2] = true;
             }
         }
         if (cnt >= 3) {
