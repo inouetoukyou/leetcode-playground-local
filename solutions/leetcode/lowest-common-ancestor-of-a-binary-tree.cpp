@@ -9,6 +9,8 @@
 // descendants (where we allow a node to be a descendant of itself).”
 
 #include "leetcode.h"
+#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
@@ -65,17 +67,87 @@ public:
     }
 };
 
+class Solution2 {
+private:
+    bool helper(TreeNode *root, TreeNode *p, TreeNode *q, TreeNode * &ans) {
+        if (root == nullptr) {
+            return false;
+        }
+        int left = helper(root->left, p, q, ans) ? 1 : 0;
+        int right = helper(root->right, p, q, ans) ? 1 : 0;
+        int mid = 0;
+        if (root == p || root == q) {
+            mid = 1;
+        }
+        if (mid + left + right >= 2) {
+            ans = root;
+        }
+        return mid + left + right > 0;
+    }
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        TreeNode *ans = nullptr;
+        helper(root, p, q, ans);
+        return ans;
+    }
+};
+
+class Solution3 {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        // stack for traversing
+        stack<TreeNode*> traverse;
+        // hash map for parent pointers
+        unordered_map<TreeNode*, TreeNode*> parents;
+        parents[root] = nullptr;
+        traverse.push(root);
+        // iterate until we find both the nodes p and q
+        while (parents.find(p) == parents.end() || parents.find(q) == parents.end()) {
+            auto node = traverse.top();
+            traverse.pop();
+            // while traversing the tree, keep saving the parent pointers.
+            if (node->left != nullptr) {
+                traverse.push(node->left);
+                parents[node->left] = node;
+            }
+            if (node->right != nullptr) {
+                traverse.push(node->right);
+                parents[node->right] = node;
+            }
+        }
+        // ancessors set for node p
+        unordered_set<TreeNode*> ancessors;
+        // process all ancessors for node p using parent pointers.
+        while (p != nullptr) {
+            ancessors.insert(p);
+            p = parents[p];
+        }
+        // The first ancessor of q which appears in p's ancessor set is their
+        // lowest common ancessor.
+        while (ancessors.find(q) == ancessors.end()) {
+            q = parents[q];
+        }
+        return q;
+    }
+};
+
 int sub() {
     Solution solution;
+    Solution2 solution2;
+    Solution3 solution3;
     string s;
     while (getline(cin, s)) {
         if (s == "") {
             continue;
         }
         auto root = getTree(s);
-        int p, q;
-        cin >> p >> q;
-        cout << solution.lowestCommonAncestor(root, solution.find(root, p), solution.find(root, q))->val << endl;
+        int pv, qv;
+        cin >> pv >> qv;
+        TreeNode *p = solution.find(root, pv);
+        TreeNode *q = solution.find(root, qv);
+        cout << solution.lowestCommonAncestor(root, p, q)->val << " ";
+        cout << solution2.lowestCommonAncestor(root, p, q)->val << " ";
+        cout << solution3.lowestCommonAncestor(root, p, q)->val << endl;
     }
     return 0;
 }
